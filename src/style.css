@@ -10,17 +10,64 @@
 
 @layer components {
   .btn-primary {
-    @apply text-white font-semibold py-3 px-6 rounded-lg transition-colors duration-200;
+    @apply text-white font-semibold py-3 px-6 rounded-lg transition-colors duration-200 relative overflow-hidden;
     background-color: #417286;
   }
   
+  .btn-primary::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+    animation: shimmer 2s infinite;
+  }
+  
   .btn-secondary {
-    @apply text-white font-semibold py-3 px-6 rounded-lg transition-colors duration-200;
+    @apply text-white font-semibold py-3 px-6 rounded-lg transition-colors duration-200 relative overflow-hidden;
     background-color: #417286;
+  }
+  
+  .btn-secondary::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+    animation: shimmer 2s infinite;
   }
   
   .btn-green {
     @apply bg-green-500 hover:bg-green-600 text-white font-semibold py-3 px-6 rounded-lg transition-colors duration-200;
+  }
+  
+  .shimmer-btn {
+    @apply text-white font-semibold py-3 px-6 rounded-lg transition-colors duration-200 relative overflow-hidden;
+    background-color: #417286;
+  }
+  
+  .shimmer-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+    animation: shimmer 2s infinite;
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    left: -100%;
+  }
+  100% {
+    left: 100%;
   }
 }
 
