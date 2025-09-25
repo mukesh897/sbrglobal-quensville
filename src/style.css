@@ -10,11 +10,13 @@
 
 @layer components {
   .btn-primary {
-    @apply bg-teal-500 hover:bg-teal-600 text-white font-semibold py-3 px-6 rounded-lg transition-colors duration-200;
+    @apply text-white font-semibold py-3 px-6 rounded-lg transition-colors duration-200;
+    background-color: #417286;
   }
   
   .btn-secondary {
-    @apply bg-blue-500 hover:bg-blue-600 text-white font-semibold py-3 px-6 rounded-lg transition-colors duration-200;
+    @apply text-white font-semibold py-3 px-6 rounded-lg transition-colors duration-200;
+    background-color: #417286;
   }
   
   .btn-green {

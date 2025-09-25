@@ -5,32 +5,27 @@
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex justify-between items-center h-16">
           <div class="flex items-center space-x-8">
-            <div class="flex items-center space-x-2">
-              <div class="w-8 h-8 bg-teal-500 rounded flex items-center justify-center">
-                <svg class="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 20 20">
-                  <path d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l2.293 2.293a1 1 0 001.414-1.414l-7-7z"></path>
-                </svg>
-              </div>
-              <div class="text-2xl font-bold text-gray-900">SBR GROUP</div>
+            <div class="flex items-center">
+              <img src="/src/assets/images/logo.png" alt="SBR GROUP" class="w-12 h-12">
             </div>
             <div class="hidden md:flex space-x-6">
-              <a href="#home" class="text-gray-700 hover:text-teal-500 transition-colors">Home</a>
-              <a href="#highlights" class="text-gray-700 hover:text-teal-500 transition-colors">Highlights</a>
-              <a href="#pricing" class="text-gray-700 hover:text-teal-500 transition-colors">Pricing & Floor Plan</a>
-              <a href="#amenities" class="text-gray-700 hover:text-teal-500 transition-colors">Amenities</a>
-              <a href="#gallery" class="text-gray-700 hover:text-teal-500 transition-colors">Gallery</a>
-              <a href="#location" class="text-gray-700 hover:text-teal-500 transition-colors">Location</a>
+              <a href="#home" class="text-gray-700 transition-colors hover:text-[#417286]">Home</a>
+              <a href="#highlights" class="text-gray-700 transition-colors hover:text-[#417286]">Highlights</a>
+              <a href="#pricing" class="text-gray-700 transition-colors hover:text-[#417286]">Pricing & Floor Plan</a>
+              <a href="#amenities" class="text-gray-700 transition-colors hover:text-[#417286]">Amenities</a>
+              <a href="#gallery" class="text-gray-700 transition-colors hover:text-[#417286]">Gallery</a>
+              <a href="#location" class="text-gray-700 transition-colors hover:text-[#417286]">Location</a>
             </div>
           </div>
           <div class="flex items-center space-x-4">
-            <button class="bg-gray-800 text-white px-4 py-2 rounded text-sm hidden md:block">Schedule Site Visit</button>
+            <button @click="openModal" class="text-white px-4 py-2 rounded text-sm hidden md:block" style="background-color: #417286;">Schedule Site Visit</button>
             <div class="flex items-center space-x-2 text-gray-700 font-semibold hidden md:flex">
               <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
                 <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"></path>
               </svg>
               <span>+917204508777</span>
             </div>
-            <button @click="toggleMobileMenu" class="md:hidden p-2 rounded-md text-gray-700 hover:text-teal-500 focus:outline-none focus:ring-2 focus:ring-teal-500">
+            <button @click="toggleMobileMenu" class="md:hidden p-2 rounded-md text-gray-700 hover:text-[#417286] focus:outline-none focus:ring-2 focus:ring-[#417286]">
               <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
               </svg>
@@ -41,14 +36,14 @@
         <!-- Mobile Menu -->
         <div v-if="mobileMenuOpen" class="md:hidden border-t border-gray-200 py-4">
           <div class="flex flex-col space-y-4">
-            <a href="#home" class="text-gray-700 hover:text-teal-500 transition-colors px-4 py-2">Home</a>
-            <a href="#highlights" class="text-gray-700 hover:text-teal-500 transition-colors px-4 py-2">Highlights</a>
-            <a href="#pricing" class="text-gray-700 hover:text-teal-500 transition-colors px-4 py-2">Pricing & Floor Plan</a>
-            <a href="#amenities" class="text-gray-700 hover:text-teal-500 transition-colors px-4 py-2">Amenities</a>
-            <a href="#gallery" class="text-gray-700 hover:text-teal-500 transition-colors px-4 py-2">Gallery</a>
-            <a href="#location" class="text-gray-700 hover:text-teal-500 transition-colors px-4 py-2">Location</a>
+            <a href="#home" class="text-gray-700 hover:text-[#417286] transition-colors px-4 py-2">Home</a>
+            <a href="#highlights" class="text-gray-700 hover:text-[#417286] transition-colors px-4 py-2">Highlights</a>
+            <a href="#pricing" class="text-gray-700 hover:text-[#417286] transition-colors px-4 py-2">Pricing & Floor Plan</a>
+            <a href="#amenities" class="text-gray-700 hover:text-[#417286] transition-colors px-4 py-2">Amenities</a>
+            <a href="#gallery" class="text-gray-700 hover:text-[#417286] transition-colors px-4 py-2">Gallery</a>
+            <a href="#location" class="text-gray-700 hover:text-[#417286] transition-colors px-4 py-2">Location</a>
             <div class="px-4 py-2">
-              <button class="bg-gray-800 text-white px-4 py-2 rounded text-sm w-full">Schedule Site Visit</button>
+              <button @click="openModal" class="text-white px-4 py-2 rounded text-sm w-full" style="background-color: #417286;">Schedule Site Visit</button>
             </div>
             <div class="flex items-center space-x-2 text-gray-700 font-semibold px-4 py-2">
               <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
@@ -67,11 +62,31 @@
       <div class="flex-1">
         <!-- Hero Section -->
         <section id="home" class="relative">
-          <div class="relative h-[500px] md:h-[700px] bg-gray-200">
-            <img src="/src/assets/images/contact.png" 
-                 alt="SBR Global Queens Ville" 
-                 class="w-full h-full object-cover">
+          <div class="relative h-[500px] md:h-[700px] bg-gray-200 overflow-hidden">
+            <!-- Carousel Images -->
+            <div class="relative w-full h-full">
+              <img v-show="currentSlide === 0" 
+                   src="/src/assets/images/contact.png" 
+                   alt="SBR Global Queens Ville" 
+                   class="w-full h-full object-cover transition-opacity duration-1000">
+              <img v-show="currentSlide === 1" 
+                   src="/src/assets/images/slider1.png" 
+                   alt="SBR Global Queens Ville" 
+                   class="w-full h-full object-cover transition-opacity duration-1000">
+              <img v-show="currentSlide === 2" 
+                   src="/src/assets/images/slider2.png" 
+                   alt="SBR Global Queens Ville" 
+                   class="w-full h-full object-cover transition-opacity duration-1000">
+            </div>
             <div class="absolute inset-0 bg-black bg-opacity-20"></div>
+            
+            <!-- Carousel Dots -->
+            <div class="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2">
+              <button v-for="(slide, index) in slides" :key="index" 
+                      @click="currentSlide = index"
+                      :class="currentSlide === index ? 'bg-white' : 'bg-white bg-opacity-50'"
+                      class="w-3 h-3 rounded-full transition-all duration-300"></button>
+            </div>
             
             <!-- Hero Card -->
             <div class="absolute top-4 left-4 right-4 md:top-12 md:left-8 md:right-auto bg-white rounded-xl shadow-2xl p-4 md:p-8 max-w-lg">
@@ -80,8 +95,8 @@
               <div class="text-sm md:text-base text-gray-600 mb-4 md:mb-6">At Kumbalgodu, Mysore Road, Bangalore</div>
               
               <!-- Teal bordered box -->
-              <div class="border-2 border-teal-500 rounded-lg p-4 mb-4 bg-teal-50">
-                <div class="flex items-center space-x-2 text-teal-700 font-semibold">
+              <div class="border-2 rounded-lg p-4 mb-4" style="border-color: #417286; background-color: rgba(65, 114, 134, 0.1);">
+                <div class="flex items-center space-x-2 font-semibold" style="color: #417286;">
                   <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
                     <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"></path>
                   </svg>
@@ -90,8 +105,8 @@
               </div>
               
               <!-- Phone number box -->
-              <div class="border-2 border-teal-500 rounded-lg p-4 mb-6 bg-teal-50">
-                <div class="flex items-center space-x-2 text-teal-700 font-semibold text-lg">
+              <div class="border-2 rounded-lg p-4 mb-6" style="border-color: #417286; background-color: rgba(65, 114, 134, 0.1);">
+                <div class="flex items-center space-x-2 font-semibold text-lg" style="color: #417286;">
                   <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
                     <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"></path>
                   </svg>
@@ -119,15 +134,15 @@
               <div class="mb-4 md:mb-6">
                 <ul class="space-y-1 md:space-y-2 text-xs md:text-sm text-gray-700">
                   <li class="flex items-center space-x-2">
-                    <div class="w-2 h-2 bg-teal-500 rounded-full transform rotate-45 flex-shrink-0"></div>
+                    <div class="w-2 h-2 rounded-full transform rotate-45 flex-shrink-0" style="background-color: #417286;"></div>
                     <span>Limited Time Period Offer</span>
                   </li>
                   <li class="flex items-center space-x-2">
-                    <div class="w-2 h-2 bg-teal-500 rounded-full transform rotate-45 flex-shrink-0"></div>
+                    <div class="w-2 h-2 rounded-full transform rotate-45 flex-shrink-0" style="background-color: #417286;"></div>
                     <span>High-Speed Elevators</span>
                   </li>
                   <li class="flex items-center space-x-2">
-                    <div class="w-2 h-2 bg-teal-500 rounded-full transform rotate-45 flex-shrink-0"></div>
+                    <div class="w-2 h-2 rounded-full transform rotate-45 flex-shrink-0" style="background-color: #417286;"></div>
                     <span>Early Buy Discounts</span>
                   </li>
                 </ul>
@@ -136,10 +151,10 @@
               <!-- Pricing info -->
               <div class="text-xs md:text-sm text-gray-700 mb-4 md:mb-6">
                 <div class="font-semibold">Luxurious 2 & 3 BHK Homes</div>
-                <div class="text-base md:text-lg font-bold text-teal-600">Starting Price ₹ 90 Lacs* Onwards</div>
+                <div class="text-base md:text-lg font-bold" style="color: #417286;">Starting Price ₹ 90 Lacs* Onwards</div>
               </div>
               
-              <button class="bg-gray-800 text-white px-6 py-3 rounded-lg font-semibold w-full hover:bg-gray-900 transition-colors">
+              <button @click="openModal" class="text-white px-6 py-3 rounded-lg font-semibold w-full transition-colors" style="background-color: #417286;">
                 Enquire Now
               </button>
             </div>
@@ -157,7 +172,7 @@
                   Thoughtfully crafted 2BHK Duplex and Penthouse Villaments, 2BHK and 3BHK Simplex, blending luxury of independent 
                   villa with the ease of apartment living. Experience privacy, picturesque views, and a truly sophisticated lifestyle.
                 </p>
-                <button class="btn-primary">Enquire Now</button>
+                <button @click="openModal" class="btn-primary">Enquire Now</button>
               </div>
               <div>
                 <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2016&q=80" 
@@ -174,7 +189,7 @@
             <h2 class="text-3xl font-bold text-gray-900 mb-8 text-center">SBR Global Queens Ville - Highlights</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
               <div class="flex items-center space-x-3">
-                <div class="w-6 h-6 bg-green-500 rounded-full flex items-center justify-center">
+                <div class="w-6 h-6 rounded-full flex items-center justify-center" style="background-color: #417286;">
                   <svg class="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 20 20">
                     <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
                   </svg>
@@ -182,7 +197,7 @@
                 <span class="text-gray-700 font-medium">2 Grand Clubhouses</span>
               </div>
               <div class="flex items-center space-x-3">
-                <div class="w-6 h-6 bg-green-500 rounded-full flex items-center justify-center">
+                <div class="w-6 h-6 rounded-full flex items-center justify-center" style="background-color: #417286;">
                   <svg class="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 20 20">
                     <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
                   </svg>
@@ -190,7 +205,7 @@
                 <span class="text-gray-700 font-medium">30+ World-Class Amenities</span>
               </div>
               <div class="flex items-center space-x-3">
-                <div class="w-6 h-6 bg-green-500 rounded-full flex items-center justify-center">
+                <div class="w-6 h-6 rounded-full flex items-center justify-center" style="background-color: #417286;">
                   <svg class="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 20 20">
                     <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
                   </svg>
@@ -198,7 +213,7 @@
                 <span class="text-gray-700 font-medium">Aluminium Formwork</span>
               </div>
               <div class="flex items-center space-x-3">
-                <div class="w-6 h-6 bg-green-500 rounded-full flex items-center justify-center">
+                <div class="w-6 h-6 rounded-full flex items-center justify-center" style="background-color: #417286;">
                   <svg class="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 20 20">
                     <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
                   </svg>
@@ -230,7 +245,7 @@
                     <td class="px-6 py-4 text-sm text-gray-600">1039 Sq.Ft.</td>
                     <td class="px-6 py-4 text-sm text-gray-900 font-semibold">₹ 90 Lacs* Onwards</td>
                     <td class="px-6 py-4">
-                      <button class="btn-secondary text-sm">Complete Pricing Details</button>
+                      <button @click="openModal" class="btn-secondary text-sm">Complete Pricing Details</button>
                     </td>
                   </tr>
                   <tr>
@@ -238,7 +253,7 @@
                     <td class="px-6 py-4 text-sm text-gray-600">2316 Sq.Ft.</td>
                     <td class="px-6 py-4 text-sm text-gray-900 font-semibold">₹ 1.94 Cr* Onwards</td>
                     <td class="px-6 py-4">
-                      <button class="btn-secondary text-sm">Complete Pricing Details</button>
+                      <button @click="openModal" class="btn-secondary text-sm">Complete Pricing Details</button>
                     </td>
                   </tr>
                   <tr>
@@ -246,7 +261,7 @@
                     <td class="px-6 py-4 text-sm text-gray-600">2104 - 2204 Sq.Ft.</td>
                     <td class="px-6 py-4 text-sm text-gray-900 font-semibold">₹ 1.76 - 1.85 Cr* Onwards</td>
                     <td class="px-6 py-4">
-                      <button class="btn-secondary text-sm">Complete Pricing Details</button>
+                      <button @click="openModal" class="btn-secondary text-sm">Complete Pricing Details</button>
                     </td>
                   </tr>
                   <tr>
@@ -254,7 +269,7 @@
                     <td class="px-6 py-4 text-sm text-gray-600">2104 - 2204 Sq.Ft.</td>
                     <td class="px-6 py-4 text-sm text-gray-900 font-semibold">₹ 1.76 - 1.85 Cr* Onwards</td>
                     <td class="px-6 py-4">
-                      <button class="btn-secondary text-sm">Complete Pricing Details</button>
+                      <button @click="openModal" class="btn-secondary text-sm">Complete Pricing Details</button>
                     </td>
                   </tr>
                   <tr>
@@ -262,7 +277,7 @@
                     <td class="px-6 py-4 text-sm text-gray-600">2403 - 2410 Sq.Ft.</td>
                     <td class="px-6 py-4 text-sm text-gray-900 font-semibold">₹ 2.29 - 2.30 Cr* Onwards</td>
                     <td class="px-6 py-4">
-                      <button class="btn-secondary text-sm">Complete Pricing Details</button>
+                      <button @click="openModal" class="btn-secondary text-sm">Complete Pricing Details</button>
                     </td>
                   </tr>
                 </tbody>
@@ -280,13 +295,13 @@
                 <img src="/src/assets/images/masterplan.png" 
                      alt="Master Plan Layout" 
                      class="h-64 w-full rounded-lg mb-4 object-cover">
-                <button class="btn-primary">Request Master Layout Plan</button>
+                <button @click="openModal" class="btn-primary">Request Master Layout Plan</button>
               </div>
               <div class="text-center">
                 <img src="/src/assets/images/unitplan.png" 
                      alt="Unit Plan Layout" 
                      class="h-64 w-full rounded-lg mb-4 object-cover">
-                <button class="btn-primary">Request Unit Layout Plan</button>
+                <button @click="openModal" class="btn-primary">Request Unit Layout Plan</button>
               </div>
             </div>
           </div>
@@ -335,7 +350,7 @@
               </div>
             </div>
             <div class="text-center mt-8">
-              <button class="btn-secondary">Request All Amenities</button>
+              <button @click="openModal" class="btn-secondary">Request All Amenities</button>
             </div>
           </div>
         </section>
@@ -373,31 +388,31 @@
                 <h3 class="text-xl font-semibold text-gray-900 mb-6">Connectivity</h3>
                 <ul class="space-y-3">
                   <li class="flex items-center space-x-3">
-                    <div class="w-2 h-2 bg-teal-500 rounded-full"></div>
+                    <div class="w-2 h-2 rounded-full" style="background-color: #417286;"></div>
                     <span class="text-gray-700">NICE Road, Mysore Road Toll Booth - 4 Km</span>
                   </li>
                   <li class="flex items-center space-x-3">
-                    <div class="w-2 h-2 bg-teal-500 rounded-full"></div>
+                    <div class="w-2 h-2 rounded-full" style="background-color: #417286;"></div>
                     <span class="text-gray-700">Sri Swaminarayan Gurukul International School - 5 Km</span>
                   </li>
                   <li class="flex items-center space-x-3">
-                    <div class="w-2 h-2 bg-teal-500 rounded-full"></div>
+                    <div class="w-2 h-2 rounded-full" style="background-color: #417286;"></div>
                     <span class="text-gray-700">Rajarajeshwari Medical College & Hospital - 5 Km</span>
                   </li>
                   <li class="flex items-center space-x-3">
-                    <div class="w-2 h-2 bg-teal-500 rounded-full"></div>
+                    <div class="w-2 h-2 rounded-full" style="background-color: #417286;"></div>
                     <span class="text-gray-700">Bangalore Mysore Road Highway - 1 Km</span>
                   </li>
                   <li class="flex items-center space-x-3">
-                    <div class="w-2 h-2 bg-teal-500 rounded-full"></div>
+                    <div class="w-2 h-2 rounded-full" style="background-color: #417286;"></div>
                     <span class="text-gray-700">Kengeri Railway Station - 6 Km</span>
                   </li>
                   <li class="flex items-center space-x-3">
-                    <div class="w-2 h-2 bg-teal-500 rounded-full"></div>
+                    <div class="w-2 h-2 rounded-full" style="background-color: #417286;"></div>
                     <span class="text-gray-700">Challaghatta Metro Station - 3 Km</span>
                   </li>
                 </ul>
-                <button class="btn-primary mt-6">Request Location Details</button>
+                <button @click="openModal" class="btn-primary mt-6">Request Location Details</button>
               </div>
               <img src="/src/assets/images/location.png" 
                    alt="Location Map" 
@@ -415,21 +430,21 @@
                 <form @submit.prevent="sendEmail('site-visit')" class="space-y-6">
                   <div>
                     <label class="block text-sm font-medium text-gray-700 mb-2">Name</label>
-                    <input v-model="formData.name" type="text" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-transparent">
+                    <input v-model="formData.name" type="text" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#417286] focus:border-transparent">
                   </div>
                   <div>
                     <label class="block text-sm font-medium text-gray-700 mb-2">India (+91) - Mobile No.</label>
-                    <input v-model="formData.phone" type="tel" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-transparent">
+                    <input v-model="formData.phone" type="tel" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#417286] focus:border-transparent">
                   </div>
                   <div>
                     <label class="block text-sm font-medium text-gray-700 mb-2">E-Mail Address</label>
-                    <input v-model="formData.email" type="email" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-transparent">
+                    <input v-model="formData.email" type="email" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#417286] focus:border-transparent">
                   </div>
                   <div>
                     <label class="block text-sm font-medium text-gray-700 mb-2">Requirements</label>
-                    <textarea v-model="formData.requirements" rows="4" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-transparent"></textarea>
+                    <textarea v-model="formData.requirements" rows="4" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#417286] focus:border-transparent"></textarea>
                   </div>
-                  <button type="submit" :disabled="isSubmitting" class="bg-green-500 hover:bg-green-600 disabled:bg-gray-400 text-white px-6 py-3 rounded-lg font-semibold w-full transition-colors">
+                  <button type="submit" :disabled="isSubmitting" class="disabled:bg-gray-400 text-white px-6 py-3 rounded-lg font-semibold w-full transition-colors" style="background-color: #417286;">
                     {{ isSubmitting ? 'Submitting...' : 'Pre-Register Now' }}
                   </button>
                   <div v-if="submitMessage" class="text-sm text-green-600 mt-2">
@@ -454,26 +469,26 @@
           <form @submit.prevent="sendEmail('sidebar')" class="space-y-4">
             <div>
               <label class="block text-sm font-medium text-gray-700 mb-2">Name</label>
-              <input v-model="formData.name" type="text" required class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-transparent">
+              <input v-model="formData.name" type="text" required class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#417286] focus:border-transparent">
             </div>
             <div>
               <label class="block text-sm font-medium text-gray-700 mb-2">India (+91)</label>
               <div class="flex">
-                <select class="px-3 py-2 border border-gray-300 rounded-l-lg focus:ring-2 focus:ring-teal-500 focus:border-transparent">
+                <select class="px-3 py-2 border border-gray-300 rounded-l-lg focus:ring-2 focus:ring-[#417286] focus:border-transparent">
                   <option>+91</option>
                 </select>
-                <input v-model="formData.phone" type="tel" placeholder="Mobile No." required class="flex-1 px-3 py-2 border border-gray-300 rounded-r-lg focus:ring-2 focus:ring-teal-500 focus:border-transparent">
+                <input v-model="formData.phone" type="tel" placeholder="Mobile No." required class="flex-1 px-3 py-2 border border-gray-300 rounded-r-lg focus:ring-2 focus:ring-[#417286] focus:border-transparent">
               </div>
             </div>
             <div>
               <label class="block text-sm font-medium text-gray-700 mb-2">E-Mail Address</label>
-              <input v-model="formData.email" type="email" required class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-transparent">
+              <input v-model="formData.email" type="email" required class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#417286] focus:border-transparent">
             </div>
             <div>
               <label class="block text-sm font-medium text-gray-700 mb-2">Requirements</label>
-              <textarea v-model="formData.requirements" rows="3" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-transparent"></textarea>
+              <textarea v-model="formData.requirements" rows="3" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#417286] focus:border-transparent"></textarea>
             </div>
-            <button type="submit" :disabled="isSubmitting" class="bg-green-500 hover:bg-green-600 disabled:bg-gray-400 text-white px-6 py-3 rounded-lg font-semibold w-full transition-colors">
+            <button type="submit" :disabled="isSubmitting" class="disabled:bg-gray-400 text-white px-6 py-3 rounded-lg font-semibold w-full transition-colors" style="background-color: #417286;">
               {{ isSubmitting ? 'Submitting...' : 'Pre-Register Now' }}
             </button>
             <div v-if="submitMessage" class="text-sm text-green-600 mt-2">
@@ -489,7 +504,7 @@
 
         <div class="space-y-6 mb-8">
           <div class="flex items-center space-x-4">
-            <div class="w-12 h-12 bg-teal-500 rounded-full flex items-center justify-center">
+            <div class="w-12 h-12 rounded-full flex items-center justify-center" style="background-color: #417286;">
               <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20">
                 <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"></path>
               </svg>
@@ -499,7 +514,7 @@
             </div>
           </div>
           <div class="flex items-center space-x-4">
-            <div class="w-12 h-12 bg-green-500 rounded-full flex items-center justify-center">
+            <div class="w-12 h-12 rounded-full flex items-center justify-center" style="background-color: #417286;">
               <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20">
                 <path d="M8 16.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0zM15 16.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0z"></path>
                 <path d="M3 4a1 1 0 00-1 1v10a1 1 0 001 1h1.05a2.5 2.5 0 014.9 0H10a1 1 0 001-1V5a1 1 0 00-1-1H3zM14 7a1 1 0 00-1 1v6.05A2.5 2.5 0 0115.95 16H17a1 1 0 001-1V8a1 1 0 00-1-1h-3z"></path>
@@ -522,7 +537,7 @@
           </div>
         </div>
 
-        <button class="bg-gray-800 text-white px-6 py-3 rounded-lg font-semibold w-full hover:bg-gray-900 transition-colors">
+        <button @click="openModal" class="bg-gray-800 text-white px-6 py-3 rounded-lg font-semibold w-full hover:bg-gray-900 transition-colors">
           Request Call Back
         </button>
       </div>
@@ -534,21 +549,21 @@
           <form @submit.prevent="sendEmail('mobile')" class="space-y-4">
             <div>
               <label class="block text-sm font-medium text-gray-700 mb-2">Name</label>
-              <input v-model="formData.name" type="text" required class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-transparent">
+              <input v-model="formData.name" type="text" required class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#417286] focus:border-transparent">
             </div>
             <div>
               <label class="block text-sm font-medium text-gray-700 mb-2">India (+91) - Mobile No.</label>
-              <input v-model="formData.phone" type="tel" required class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-transparent">
+              <input v-model="formData.phone" type="tel" required class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#417286] focus:border-transparent">
             </div>
             <div>
               <label class="block text-sm font-medium text-gray-700 mb-2">E-Mail Address</label>
-              <input v-model="formData.email" type="email" required class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-transparent">
+              <input v-model="formData.email" type="email" required class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#417286] focus:border-transparent">
             </div>
             <div>
               <label class="block text-sm font-medium text-gray-700 mb-2">Requirements</label>
-              <textarea v-model="formData.requirements" rows="3" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-transparent"></textarea>
+              <textarea v-model="formData.requirements" rows="3" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#417286] focus:border-transparent"></textarea>
             </div>
-            <button type="submit" :disabled="isSubmitting" class="bg-green-500 hover:bg-green-600 disabled:bg-gray-400 text-white px-6 py-3 rounded-lg font-semibold w-full transition-colors">
+            <button type="submit" :disabled="isSubmitting" class="disabled:bg-gray-400 text-white px-6 py-3 rounded-lg font-semibold w-full transition-colors" style="background-color: #417286;">
               {{ isSubmitting ? 'Submitting...' : 'Pre-Register Now' }}
             </button>
             <div v-if="submitMessage" class="text-sm text-green-600 mt-2">
@@ -592,18 +607,147 @@
         </div>
       </div>
     </footer>
+
+    <!-- Popup Modal -->
+    <div v-if="showModal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4">
+      <div class="bg-white rounded-xl max-w-4xl w-full max-h-[90vh] overflow-y-auto">
+        <div class="flex flex-col lg:flex-row">
+          <!-- Left Section - We Promise -->
+          <div class="p-8 lg:w-1/2" style="background: linear-gradient(to bottom right, rgba(59, 130, 246, 0.1), rgba(65, 114, 134, 0.1));">
+            <h2 class="text-3xl font-bold text-gray-800 mb-8">We Promise</h2>
+            <div class="space-y-6">
+              <div class="flex items-center space-x-4">
+                <div class="w-12 h-12 rounded-full flex items-center justify-center" style="background-color: #417286;">
+                  <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20">
+                    <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"></path>
+                  </svg>
+                </div>
+                <div>
+                  <h3 class="text-lg font-semibold text-gray-800">Instant Call Back</h3>
+                  <p class="text-gray-600">Get immediate response from our team</p>
+                </div>
+              </div>
+              <div class="flex items-center space-x-4">
+                <div class="w-12 h-12 rounded-full flex items-center justify-center" style="background-color: #417286;">
+                  <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20">
+                    <path d="M8 16.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0zM15 16.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0z"></path>
+                    <path d="M3 4a1 1 0 00-1 1v10a1 1 0 001 1h1.05a2.5 2.5 0 014.9 0H10a1 1 0 001-1V5a1 1 0 00-1-1H3zM14 7a1 1 0 00-1 1v6.05A2.5 2.5 0 0115.95 16H17a1 1 0 001-1V8a1 1 0 00-1-1h-3z"></path>
+                  </svg>
+                </div>
+                <div>
+                  <h3 class="text-lg font-semibold text-gray-800">Free Site Visit</h3>
+                  <p class="text-gray-600">Schedule at your convenience</p>
+                </div>
+              </div>
+              <div class="flex items-center space-x-4">
+                <div class="w-12 h-12 bg-yellow-500 rounded-full flex items-center justify-center">
+                  <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20">
+                    <path d="M8.433 7.418c.155-.103.346-.196.567-.267v1.698a2.305 2.305 0 01-.567-.267C8.07 8.34 8 8.114 8 8c0-.114.07-.34.433-.582zM11 12.849v-1.698c.22.071.412.164.567.267.364.243.433.468.433.582 0 .114-.07.34-.433.582a2.305 2.305 0 01-.567.267z"></path>
+                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-13a1 1 0 10-2 0v.092a4.535 4.535 0 00-1.676.662C6.602 6.234 6 7.009 6 8c0 .99.602 1.765 1.324 2.246.48.32 1.054.545 1.676.662v1.941a1 1 0 102 0v-1.941a4.535 4.535 0 001.676-.662C13.398 9.765 14 8.99 14 8c0-.99-.602-1.765-1.324-2.246A4.535 4.535 0 0011 5.092V5z" clip-rule="evenodd"></path>
+                  </svg>
+                </div>
+                <div>
+                  <h3 class="text-lg font-semibold text-gray-800">Unmatched Price</h3>
+                  <p class="text-gray-600">Best deals exclusively for you</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right Section - Registration Form -->
+          <div class="p-8 lg:w-1/2 relative">
+            <!-- Close Button -->
+            <button @click="closeModal" class="absolute top-4 right-4 w-8 h-8 bg-gray-200 rounded-full flex items-center justify-center hover:bg-gray-300 transition-colors">
+              <svg class="w-4 h-4 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+              </svg>
+            </button>
+
+            <!-- Logo and Branding -->
+            <div class="flex items-center space-x-3 mb-6">
+              <img src="/src/assets/images/logo.png" alt="SBR GROUP" class="w-12 h-12">
+              <div>
+                <div class="text-xl font-bold text-gray-900">SBR GROUP</div>
+                <div class="text-sm text-gray-600">Building Reality</div>
+                <div class="text-xs text-gray-500">Authorized Channel Partner</div>
+              </div>
+            </div>
+
+            <!-- Headline -->
+            <h2 class="text-2xl font-bold text-gray-900 mb-2">
+              Register Here And Avail The <span class="text-red-600">Best Offers!!</span>
+            </h2>
+
+            <!-- Form -->
+            <form @submit.prevent="submitModalForm" class="space-y-4 mt-6">
+              <div>
+                <label class="block text-sm font-medium text-gray-700 mb-2">Name</label>
+                <input v-model="modalFormData.name" type="text" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#417286] focus:border-transparent">
+              </div>
+              <div>
+                <label class="block text-sm font-medium text-gray-700 mb-2">India (+91)</label>
+                <div class="flex">
+                  <select class="px-4 py-3 border border-gray-300 rounded-l-lg focus:ring-2 focus:ring-[#417286] focus:border-transparent">
+                    <option>+91</option>
+                  </select>
+                  <input v-model="modalFormData.phone" type="tel" placeholder="Mobile No." required class="flex-1 px-4 py-3 border border-gray-300 rounded-r-lg focus:ring-2 focus:ring-[#417286] focus:border-transparent">
+                </div>
+              </div>
+              <div>
+                <label class="block text-sm font-medium text-gray-700 mb-2">E-Mail Address</label>
+                <input v-model="modalFormData.email" type="email" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#417286] focus:border-transparent">
+              </div>
+              <div>
+                <label class="block text-sm font-medium text-gray-700 mb-2">Requirements</label>
+                <input v-model="modalFormData.requirements" type="text" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#417286] focus:border-transparent">
+              </div>
+              <button type="submit" :disabled="isSubmitting" class="w-full bg-green-500 hover:bg-green-600 disabled:bg-gray-400 text-white px-6 py-3 rounded-lg font-semibold transition-colors">
+                {{ isSubmitting ? 'Submitting...' : 'Pre-Register Now' }}
+              </button>
+            </form>
+
+            <!-- Consent Text -->
+            <p class="text-xs text-gray-500 mt-4 leading-relaxed">
+              I authorize company representatives to Call, SMS, Email or WhatsApp me about its products and offers. 
+              This consent overrides any registration for DNC/NDNC.
+            </p>
+
+            <!-- Footer -->
+            <div class="mt-6 bg-gray-100 rounded-lg p-4 flex items-center space-x-2">
+              <svg class="w-5 h-5 text-gray-600" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"></path>
+              </svg>
+              <span class="text-gray-700 font-semibold">+917204508777</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 
 <script>
-import { ref } from 'vue'
+import { ref, onMounted, onUnmounted } from 'vue'
 import emailjs from '@emailjs/browser'
 
 export default {
   name: 'App',
   setup() {
     const mobileMenuOpen = ref(false)
+    const showModal = ref(false)
+    const currentSlide = ref(0)
+    const slides = ref([
+      { src: '/src/assets/images/contact.png' },
+      { src: '/src/assets/images/slider1.png' },
+      { src: '/src/assets/images/slider2.png' }
+    ])
     const formData = ref({
+      name: '',
+      email: '',
+      phone: '',
+      requirements: ''
+    })
+    const modalFormData = ref({
       name: '',
       email: '',
       phone: '',
@@ -615,6 +759,44 @@ export default {
     const toggleMobileMenu = () => {
       mobileMenuOpen.value = !mobileMenuOpen.value
     }
+    
+    const openModal = () => {
+      showModal.value = true
+    }
+    
+    const closeModal = () => {
+      showModal.value = false
+      modalFormData.value = { name: '', email: '', phone: '', requirements: '' }
+    }
+    
+    const showThankYouPage = () => {
+      // Redirect to thank you page
+      window.location.href = '/thank-you.html'
+    }
+    
+    // Auto carousel functionality
+    let carouselInterval = null
+    
+    const startCarousel = () => {
+      carouselInterval = setInterval(() => {
+        currentSlide.value = (currentSlide.value + 1) % slides.value.length
+      }, 4000) // Change slide every 4 seconds
+    }
+    
+    const stopCarousel = () => {
+      if (carouselInterval) {
+        clearInterval(carouselInterval)
+        carouselInterval = null
+      }
+    }
+    
+    onMounted(() => {
+      startCarousel()
+    })
+    
+    onUnmounted(() => {
+      stopCarousel()
+    })
     
     const sendEmail = async (formType = 'sidebar') => {
       isSubmitting.value = true
@@ -638,6 +820,12 @@ export default {
         
         submitMessage.value = 'Thank you! We will contact you soon.'
         formData.value = { name: '', email: '', phone: '', requirements: '' }
+        
+        // Show thank you message after successful submission
+        setTimeout(() => {
+          showThankYouPage()
+        }, 1000)
+        
       } catch (error) {
         console.error('EmailJS error:', error)
         submitMessage.value = 'Sorry, there was an error. Please try again.'
@@ -646,13 +834,53 @@ export default {
       }
     }
     
+    const submitModalForm = async () => {
+      isSubmitting.value = true
+      
+      try {
+        const templateParams = {
+          from_name: modalFormData.value.name,
+          from_email: modalFormData.value.email,
+          phone: modalFormData.value.phone,
+          requirements: modalFormData.value.requirements,
+          form_type: 'modal'
+        }
+        
+        await emailjs.send(
+          'service_1o90b3i',
+          'template_msncxgt',
+          templateParams,
+          'CAXeNuLKdK4qtQmdn'
+        )
+        
+        // Close modal and show thank you message
+        closeModal()
+        setTimeout(() => {
+          showThankYouPage()
+        }, 500)
+        
+      } catch (error) {
+        console.error('EmailJS error:', error)
+        alert('Sorry, there was an error. Please try again.')
+      } finally {
+        isSubmitting.value = false
+      }
+    }
+    
     return {
       mobileMenuOpen,
+      showModal,
+      currentSlide,
+      slides,
       toggleMobileMenu,
+      openModal,
+      closeModal,
       formData,
+      modalFormData,
       isSubmitting,
       submitMessage,
-      sendEmail
+      sendEmail,
+      submitModalForm
     }
   }
 }
