@@ -933,8 +933,8 @@ export default {
       
       try {
         const templateParams = {
-          from_name: formData.value.name,
-          from_email: formData.value.email,
+          name: formData.value.name,
+          email: formData.value.email,
           phone: formData.value.phone,
           form_type: formType
         }
