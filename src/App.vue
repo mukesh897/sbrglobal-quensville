@@ -721,12 +721,103 @@
     </div>
 
     <!-- Footer -->
-    <footer class="bg-gray-900 text-white py-8">
+    <footer class="bg-gray-900 text-white py-12">
       <div class="max-w-6xl mx-auto px-8">
-        <div class="text-center text-sm text-gray-400">
+        <div class="text-center text-sm text-gray-400 mb-8">
           <p class="mb-2">We are Authorized Channel Partner with many Developers.</p>
-          <p class="mb-4">Disclaimer & Privacy Policy </p>
           <p>All Rights Reserved. © 2025</p>
+        </div>
+        
+        <!-- Disclaimer & Privacy Policy Section -->
+        <div class="border-t border-gray-700 pt-8">
+          <div class="space-y-8 text-xs text-gray-300">
+            <!-- Disclaimer Section -->
+            <div class="w-full">
+              <h3 class="text-lg font-semibold text-white mb-4">Disclaimer</h3>
+              <div class="space-y-3 leading-relaxed">
+                <p>
+                  This website is intended solely to provide general information about real estate projects across various regions. 
+                  By accessing this website, the viewer acknowledges that the information presented, including brochures and marketing 
+                  materials, is for informational purposes only and should not be relied upon for making any booking or purchase 
+                  decisions in any project.
+                </p>
+                <p>
+                  Nothing contained on this website constitutes advertising, marketing, booking, selling, or an offer or invitation 
+                  to purchase a unit in any project by the company. The company shall not be held responsible for any consequences 
+                  arising from actions taken by viewers based on the content or information available on this website.
+                </p>
+                <p>
+                  Please note that the company has not independently verified the details or compliances of the projects listed herein. 
+                  Additionally, the company has not verified the RERA (Real Estate Regulation Act, 2016) registration status of these 
+                  projects. The company makes no representation regarding such compliances. It is strongly advised that buyers independently 
+                  verify the RERA registration status and other legal compliances of any project before making a purchase decision.
+                </p>
+              </div>
+            </div>
+            
+            <!-- Privacy Policy Section -->
+            <div class="w-full">
+              <h3 class="text-lg font-semibold text-white mb-4">Privacy Policy</h3>
+              <div class="space-y-3 leading-relaxed">
+                <p>
+                  We are committed to safeguarding your personal information. This Privacy Policy outlines how your information is 
+                  collected, used, and protected when you use our website.
+                </p>
+                
+                <div>
+                  <h4 class="font-semibold text-white mb-2">Updates to Privacy Policy</h4>
+                  <p>
+                    This Privacy Policy may be updated or modified from time to time without prior notice. We encourage you to 
+                    periodically review this page to stay informed about changes to the terms and conditions.
+                  </p>
+                </div>
+                
+                <div>
+                  <h4 class="font-semibold text-white mb-2">User Information</h4>
+                  <p>
+                    By using our website, you agree to the terms outlined in this Privacy Policy and consent to the collection and 
+                    use of information you may provide. While some sections of the website can be accessed without sharing personal 
+                    details, certain features may require you to provide personal information such as your name, email address, 
+                    phone number, etc.
+                  </p>
+                  <p class="mt-2">
+                    The information collected is used to:
+                  </p>
+                  <ul class="list-disc list-inside ml-4 mt-1 space-y-1">
+                    <li>Provide relevant products and services,</li>
+                    <li>Acknowledge receipt of your communication, and</li>
+                    <li>Share updates or information that may be of interest to you.</li>
+                  </ul>
+                  <p class="mt-2">
+                    You may request removal from our mailing list at any time. We do not share, sell, or disclose your personal 
+                    information to third parties without your consent.
+                  </p>
+                </div>
+                
+                <div>
+                  <h4 class="font-semibold text-white mb-2">Security</h4>
+                  <p>
+                    To protect sensitive data, all transmissions between client and server are encrypted using advanced 
+                    industry-standard protocols. Access to personal information is strictly restricted to authorized employees, 
+                    who are bound by confidentiality obligations.
+                  </p>
+                </div>
+                
+                <div>
+                  <h4 class="font-semibold text-white mb-2">Use of Cookies</h4>
+                  <p>
+                    We may use cookies to enhance website security, maintain session continuity, and improve user experience. 
+                    If you choose to disable cookies, certain features or services of the website may not function properly.
+                  </p>
+                </div>
+                
+                <p>
+                  For any queries or suggestions regarding this Privacy Policy or your interaction with our website, please 
+                  contact us through the details provided on this site.
+                </p>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </footer>
