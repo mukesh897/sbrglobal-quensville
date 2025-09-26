@@ -11,7 +11,8 @@
             <div class="hidden md:flex space-x-6">
               <a href="#home" class="text-gray-700 transition-colors hover:text-[#417286]">Home</a>
               <a href="#highlights" class="text-gray-700 transition-colors hover:text-[#417286]">Highlights</a>
-              <a href="#pricing" class="text-gray-700 transition-colors hover:text-[#417286]">Pricing & Floor Plan</a>
+              <a href="#pricing" class="text-gray-700 transition-colors hover:text-[#417286]">Pricing</a>
+              <a href="#masterplan" class="text-gray-700 transition-colors hover:text-[#417286]">Floor Plan</a>
               <a href="#amenities" class="text-gray-700 transition-colors hover:text-[#417286]">Amenities</a>
               <a href="#gallery" class="text-gray-700 transition-colors hover:text-[#417286]">Gallery</a>
               <a href="#location" class="text-gray-700 transition-colors hover:text-[#417286]">Location</a>
@@ -38,7 +39,8 @@
           <div class="flex flex-col space-y-2">
             <a href="#home" class="text-gray-700 hover:text-[#417286] transition-colors px-4 py-2 text-sm">Home</a>
             <a href="#highlights" class="text-gray-700 hover:text-[#417286] transition-colors px-4 py-2 text-sm">Highlights</a>
-            <a href="#pricing" class="text-gray-700 hover:text-[#417286] transition-colors px-4 py-2 text-sm">Pricing & Floor Plan</a>
+            <a href="#pricing" class="text-gray-700 hover:text-[#417286] transition-colors px-4 py-2 text-sm">Pricing</a>
+            <a href="#masterplan" class="text-gray-700 hover:text-[#417286] transition-colors px-4 py-2 text-sm">Floor Plan</a>
             <a href="#amenities" class="text-gray-700 hover:text-[#417286] transition-colors px-4 py-2 text-sm">Amenities</a>
             <a href="#gallery" class="text-gray-700 hover:text-[#417286] transition-colors px-4 py-2 text-sm">Gallery</a>
             <a href="#location" class="text-gray-700 hover:text-[#417286] transition-colors px-4 py-2 text-sm">Location</a>
@@ -170,7 +172,7 @@
               <!-- Pricing info -->
               <div class="text-xs text-gray-700 mb-3">
                 <div class="font-semibold text-xs">Luxurious 2 & 3 BHK Homes</div>
-                <div class="text-sm font-bold" style="color: #417286;">Starting Price ₹ 90 Lacs* Onwards</div>
+                <div class="text-sm font-bold" style="color: #417286;">Starting Price <span class="text-xl">₹ 90 Lacs*</span> Onwards</div>
               </div>
               
               <button @click="openModal" class="shimmer-btn w-full">
@@ -182,7 +184,7 @@
 
         <!-- Desktop Hero Section (only visible on desktop) -->
         <section id="home" class="relative hidden md:block">
-          <div class="relative h-[700px] bg-gray-200 overflow-hidden">
+          <div class="relative h-[500px] bg-gray-200 overflow-hidden">
             <!-- Carousel Images -->
             <div class="relative w-full h-full">
               <img v-show="currentSlide === 0" 
@@ -224,15 +226,15 @@
             </div>
             
             <!-- Hero Card -->
-            <div class="absolute top-12 left-8 bg-white rounded-xl shadow-2xl p-8 max-w-lg">
-              <div class="text-sm text-gray-500 mb-2">New Launch</div>
-              <h1 class="text-3xl font-bold text-gray-900 mb-3">SBR GLOBAL QUEENS VILLE</h1>
-              <div class="text-base text-gray-600 mb-6">At Kumbalgodu, Mysore Road, Bangalore</div>
+            <div class="absolute top-8 left-6 bg-white rounded-xl shadow-2xl border-2 border-gray-300 p-6 max-w-sm">
+              <div class="text-xs text-gray-500 mb-2">New Launch</div>
+              <h1 class="text-xl font-bold text-gray-900 mb-2">SBR GLOBAL QUEENS VILLE</h1>
+              <div class="text-sm text-gray-600 mb-4">At Kumbalgodu, Mysore Road, Bangalore</div>
               
               <!-- Teal bordered box -->
-              <div class="border-2 rounded-lg p-4 mb-4" style="border-color: #417286; background-color: rgba(65, 114, 134, 0.1);">
-                <div class="flex items-center space-x-2 font-semibold text-sm" style="color: #417286;">
-                  <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+              <div class="border-2 rounded-lg p-3 mb-3" style="border-color: #417286; background-color: rgba(65, 114, 134, 0.1);">
+                <div class="flex items-center space-x-2 font-semibold text-xs" style="color: #417286;">
+                  <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
                     <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"></path>
                   </svg>
                   <span>On-Spot Booking Perks Await! Call Now</span>
@@ -240,9 +242,9 @@
               </div>
               
               <!-- Phone number box -->
-              <div class="border-2 rounded-lg p-4 mb-6" style="border-color: #417286; background-color: rgba(65, 114, 134, 0.1);">
-                <div class="flex items-center space-x-2 font-semibold text-lg" style="color: #417286;">
-                  <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+              <div class="border-2 rounded-lg p-3 mb-4" style="border-color: #417286; background-color: rgba(65, 114, 134, 0.1);">
+                <div class="flex items-center space-x-2 font-semibold text-sm" style="color: #417286;">
+                  <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
                     <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"></path>
                   </svg>
                   <span>+917204508777</span>
@@ -250,46 +252,46 @@
               </div>
               
               <!-- Project specs -->
-              <div class="grid grid-cols-3 gap-4 mb-6 text-sm">
+              <div class="grid grid-cols-3 gap-2 mb-4 text-xs">
                 <div class="text-center">
                   <div class="text-gray-500 text-xs">Land Parcel</div>
-                  <div class="font-bold text-gray-900 text-base">8 Acres</div>
+                  <div class="font-bold text-gray-900 text-sm">8 Acres</div>
                 </div>
                 <div class="text-center">
                   <div class="text-gray-500 text-xs">Structure</div>
-                  <div class="font-bold text-gray-900 text-base">2B + G + 4</div>
+                  <div class="font-bold text-gray-900 text-sm">2B + G + 4</div>
                 </div>
                 <div class="text-center">
                   <div class="text-gray-500 text-xs">Units</div>
-                  <div class="font-bold text-gray-900 text-base">441</div>
+                  <div class="font-bold text-gray-900 text-sm">441</div>
                 </div>
               </div>
               
               <!-- Benefits list -->
-              <div class="mb-6">
-                <ul class="space-y-2 text-sm text-gray-700">
+              <div class="mb-4">
+                <ul class="space-y-1 text-xs text-gray-700">
                   <li class="flex items-center space-x-2">
-                    <div class="w-2 h-2 rounded-full transform rotate-45 flex-shrink-0" style="background-color: #417286;"></div>
+                    <div class="w-1.5 h-1.5 rounded-full transform rotate-45 flex-shrink-0" style="background-color: #417286;"></div>
                     <span>Limited Time Period Offer</span>
                   </li>
                   <li class="flex items-center space-x-2">
-                    <div class="w-2 h-2 rounded-full transform rotate-45 flex-shrink-0" style="background-color: #417286;"></div>
+                    <div class="w-1.5 h-1.5 rounded-full transform rotate-45 flex-shrink-0" style="background-color: #417286;"></div>
                     <span>High-Speed Elevators</span>
                   </li>
                   <li class="flex items-center space-x-2">
-                    <div class="w-2 h-2 rounded-full transform rotate-45 flex-shrink-0" style="background-color: #417286;"></div>
+                    <div class="w-1.5 h-1.5 rounded-full transform rotate-45 flex-shrink-0" style="background-color: #417286;"></div>
                     <span>Early Buy Discounts</span>
                   </li>
                 </ul>
               </div>
               
               <!-- Pricing info -->
-              <div class="text-sm text-gray-700 mb-6">
+              <div class="text-xs text-gray-700 mb-4">
                 <div class="font-semibold">Luxurious 2 & 3 BHK Homes</div>
-                <div class="text-lg font-bold" style="color: #417286;">Starting Price ₹ 90 Lacs* Onwards</div>
+                <div class="text-sm font-bold" style="color: #417286;">Starting Price <span class="text-base">₹ 90 Lacs*</span> Onwards</div>
               </div>
               
-              <button @click="openModal" class="shimmer-btn w-full">
+              <button @click="openModal" class="shimmer-btn w-full text-sm py-2">
                 Enquire Now
               </button>
             </div>
@@ -310,7 +312,7 @@
                 <button @click="openModal" class="btn-primary">Enquire Now</button>
               </div>
               <div>
-                <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2016&q=80" 
+                <img src="https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" 
                      alt="Luxury Living Room" 
                      class="w-full h-96 object-cover rounded-lg">
               </div>
@@ -423,7 +425,7 @@
         </section>
 
         <!-- Master Plan & Unit Plan Section -->
-        <section class="py-16 bg-gray-900">
+        <section id="masterplan" class="py-16 bg-gray-900">
           <div class="max-w-6xl mx-auto px-8">
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
               <div class="text-center">
@@ -495,13 +497,13 @@
           <div class="max-w-6xl mx-auto px-8">
             <h2 class="text-3xl font-bold text-gray-900 mb-8 text-center">Project Gallery</h2>
             <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-6">
-              <img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" 
+              <img src="/src/assets/images/5.jpg" 
                    alt="Project Exterior" 
                    class="h-48 w-full rounded-lg object-cover">
-              <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" 
+              <img src="/src/assets/images/62.jpg" 
                    alt="Luxury Interior" 
                    class="h-48 w-full rounded-lg object-cover">
-              <img src="https://images.unsplash.com/photo-1613490493576-7fde63acd811?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" 
+              <img src="/src/assets/images/67.jpg" 
                    alt="Modern Kitchen" 
                    class="h-48 w-full rounded-lg object-cover">
               <img src="https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" 
@@ -640,17 +642,7 @@
               <div class="font-semibold text-gray-900">Instant Call Back</div>
             </div>
           </div>
-          <div class="flex items-center space-x-4">
-            <div class="w-12 h-12 rounded-full flex items-center justify-center" style="background-color: #417286;">
-              <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20">
-                <path d="M8 16.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0zM15 16.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0z"></path>
-                <path d="M3 4a1 1 0 00-1 1v10a1 1 0 001 1h1.05a2.5 2.5 0 014.9 0H10a1 1 0 001-1V5a1 1 0 00-1-1H3zM14 7a1 1 0 00-1 1v6.05A2.5 2.5 0 0115.95 16H17a1 1 0 001-1V8a1 1 0 00-1-1h-3z"></path>
-              </svg>
-            </div>
-            <div>
-              <div class="font-semibold text-gray-900">Free Site Visit</div>
-            </div>
-          </div>
+
           <div class="flex items-center space-x-4">
             <div class="w-12 h-12 bg-blue-500 rounded-full flex items-center justify-center">
               <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20">
