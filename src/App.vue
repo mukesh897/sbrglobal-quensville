@@ -60,9 +60,9 @@
     <div class="flex flex-col lg:flex-row">
       <!-- Left Content -->
       <div class="flex-1">
-        <!-- Hero Section -->
-        <section id="home" class="relative">
-          <div class="relative h-[500px] md:h-[700px] bg-gray-200 overflow-hidden">
+        <!-- Mobile Carousel Section (only visible on mobile) -->
+        <section id="home" class="relative md:hidden">
+          <div class="relative h-[400px] bg-gray-200 overflow-hidden">
             <!-- Carousel Images -->
             <div class="relative w-full h-full">
               <img v-show="currentSlide === 0" 
@@ -80,6 +80,141 @@
             </div>
             <div class="absolute inset-0 bg-black bg-opacity-20"></div>
             
+            <!-- Carousel Navigation Arrows -->
+            <button @click="previousSlide" 
+                    class="absolute left-2 top-1/2 transform -translate-y-1/2 w-8 h-8 bg-black bg-opacity-50 hover:bg-opacity-70 rounded-full flex items-center justify-center transition-all duration-300 z-10">
+              <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+              </svg>
+            </button>
+            
+            <button @click="nextSlide" 
+                    class="absolute right-2 top-1/2 transform -translate-y-1/2 w-8 h-8 bg-black bg-opacity-50 hover:bg-opacity-70 rounded-full flex items-center justify-center transition-all duration-300 z-10">
+              <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+              </svg>
+            </button>
+            
+            <!-- Carousel Dots -->
+            <div class="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2">
+              <button v-for="(slide, index) in slides" :key="index" 
+                      @click="currentSlide = index"
+                      :class="currentSlide === index ? 'bg-white' : 'bg-white bg-opacity-50'"
+                      class="w-2 h-2 rounded-full transition-all duration-300"></button>
+            </div>
+          </div>
+        </section>
+
+        <!-- Mobile Hero Card Section (only visible on mobile) -->
+        <section class="relative md:hidden mt-5 z-20">
+          <div class="max-w-6xl mx-auto px-4">
+            <div class="bg-white rounded-xl shadow-2xl p-4 max-w-lg mx-auto">
+              <div class="text-sm text-gray-500 mb-2">New Launch</div>
+              <h1 class="text-lg font-bold text-gray-900 mb-2">SBR GLOBAL QUEENS VILLE</h1>
+              <div class="text-xs text-gray-600 mb-3">At Kumbalgodu, Mysore Road, Bangalore</div>
+              
+              <!-- Teal bordered box -->
+              <div class="border-2 rounded-lg p-2 mb-3" style="border-color: #417286; background-color: rgba(65, 114, 134, 0.1);">
+                <div class="flex items-center space-x-1 font-semibold text-xs" style="color: #417286;">
+                  <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                    <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"></path>
+                  </svg>
+                  <span class="text-xs">On-Spot Booking Perks Await! Call Now</span>
+                </div>
+              </div>
+              
+              <!-- Phone number box -->
+              <div class="border-2 rounded-lg p-2 mb-4" style="border-color: #417286; background-color: rgba(65, 114, 134, 0.1);">
+                <div class="flex items-center space-x-1 font-semibold text-sm" style="color: #417286;">
+                  <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                    <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"></path>
+                  </svg>
+                  <span class="text-sm">+917204508777</span>
+                </div>
+              </div>
+              
+              <!-- Project specs -->
+              <div class="grid grid-cols-3 gap-1 mb-3 text-xs">
+                <div class="text-center">
+                  <div class="text-gray-500 text-xs">Land Parcel</div>
+                  <div class="font-bold text-gray-900 text-xs">8 Acres</div>
+                </div>
+                <div class="text-center">
+                  <div class="text-gray-500 text-xs">Structure</div>
+                  <div class="font-bold text-gray-900 text-xs">2B + G + 4</div>
+                </div>
+                <div class="text-center">
+                  <div class="text-gray-500 text-xs">Units</div>
+                  <div class="font-bold text-gray-900 text-xs">441</div>
+                </div>
+              </div>
+              
+              <!-- Benefits list -->
+              <div class="mb-3">
+                <ul class="space-y-1 text-xs text-gray-700">
+                  <li class="flex items-center space-x-1">
+                    <div class="w-1.5 h-1.5 rounded-full transform rotate-45 flex-shrink-0" style="background-color: #417286;"></div>
+                    <span class="text-xs">Limited Time Period Offer</span>
+                  </li>
+                  <li class="flex items-center space-x-1">
+                    <div class="w-1.5 h-1.5 rounded-full transform rotate-45 flex-shrink-0" style="background-color: #417286;"></div>
+                    <span class="text-xs">High-Speed Elevators</span>
+                  </li>
+                  <li class="flex items-center space-x-1">
+                    <div class="w-1.5 h-1.5 rounded-full transform rotate-45 flex-shrink-0" style="background-color: #417286;"></div>
+                    <span class="text-xs">Early Buy Discounts</span>
+                  </li>
+                </ul>
+              </div>
+              
+              <!-- Pricing info -->
+              <div class="text-xs text-gray-700 mb-3">
+                <div class="font-semibold text-xs">Luxurious 2 & 3 BHK Homes</div>
+                <div class="text-sm font-bold" style="color: #417286;">Starting Price ₹ 90 Lacs* Onwards</div>
+              </div>
+              
+              <button @click="openModal" class="shimmer-btn w-full">
+                Enquire Now
+              </button>
+            </div>
+          </div>
+        </section>
+
+        <!-- Desktop Hero Section (only visible on desktop) -->
+        <section id="home" class="relative hidden md:block">
+          <div class="relative h-[700px] bg-gray-200 overflow-hidden">
+            <!-- Carousel Images -->
+            <div class="relative w-full h-full">
+              <img v-show="currentSlide === 0" 
+                   src="/src/assets/images/contact.png" 
+                   alt="SBR Global Queens Ville" 
+                   class="w-full h-full object-cover transition-opacity duration-1000">
+              <img v-show="currentSlide === 1" 
+                   src="/src/assets/images/slider1.png" 
+                   alt="SBR Global Queens Ville" 
+                   class="w-full h-full object-cover transition-opacity duration-1000">
+              <img v-show="currentSlide === 2" 
+                   src="/src/assets/images/slider2.png" 
+                   alt="SBR Global Queens Ville" 
+                   class="w-full h-full object-cover transition-opacity duration-1000">
+            </div>
+            <div class="absolute inset-0 bg-black bg-opacity-20"></div>
+            
+            <!-- Carousel Navigation Arrows -->
+            <button @click="previousSlide" 
+                    class="absolute left-4 top-1/2 transform -translate-y-1/2 w-10 h-10 bg-black bg-opacity-50 hover:bg-opacity-70 rounded-full flex items-center justify-center transition-all duration-300 z-10">
+              <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+              </svg>
+            </button>
+            
+            <button @click="nextSlide" 
+                    class="absolute right-4 top-1/2 transform -translate-y-1/2 w-10 h-10 bg-black bg-opacity-50 hover:bg-opacity-70 rounded-full flex items-center justify-center transition-all duration-300 z-10">
+              <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+              </svg>
+            </button>
+            
             <!-- Carousel Dots -->
             <div class="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2">
               <button v-for="(slide, index) in slides" :key="index" 
@@ -89,69 +224,69 @@
             </div>
             
             <!-- Hero Card -->
-            <div class="absolute top-2 left-2 right-2 sm:top-4 sm:left-4 sm:right-4 md:top-12 md:left-8 md:right-auto bg-white rounded-xl shadow-2xl p-3 sm:p-4 md:p-8 max-w-lg">
+            <div class="absolute top-12 left-8 bg-white rounded-xl shadow-2xl p-8 max-w-lg">
               <div class="text-sm text-gray-500 mb-2">New Launch</div>
-              <h1 class="text-lg sm:text-xl md:text-3xl font-bold text-gray-900 mb-2 md:mb-3">SBR GLOBAL QUEENS VILLE</h1>
-              <div class="text-xs sm:text-sm md:text-base text-gray-600 mb-3 sm:mb-4 md:mb-6">At Kumbalgodu, Mysore Road, Bangalore</div>
+              <h1 class="text-3xl font-bold text-gray-900 mb-3">SBR GLOBAL QUEENS VILLE</h1>
+              <div class="text-base text-gray-600 mb-6">At Kumbalgodu, Mysore Road, Bangalore</div>
               
               <!-- Teal bordered box -->
-              <div class="border-2 rounded-lg p-2 sm:p-3 md:p-4 mb-3 sm:mb-4" style="border-color: #417286; background-color: rgba(65, 114, 134, 0.1);">
-                <div class="flex items-center space-x-1 sm:space-x-2 font-semibold text-xs sm:text-sm" style="color: #417286;">
-                  <svg class="w-4 h-4 sm:w-5 sm:h-5" fill="currentColor" viewBox="0 0 20 20">
+              <div class="border-2 rounded-lg p-4 mb-4" style="border-color: #417286; background-color: rgba(65, 114, 134, 0.1);">
+                <div class="flex items-center space-x-2 font-semibold text-sm" style="color: #417286;">
+                  <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
                     <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"></path>
                   </svg>
-                  <span class="text-xs sm:text-sm">On-Spot Booking Perks Await! Call Now</span>
+                  <span>On-Spot Booking Perks Await! Call Now</span>
                 </div>
               </div>
               
               <!-- Phone number box -->
-              <div class="border-2 rounded-lg p-2 sm:p-3 md:p-4 mb-4 sm:mb-6" style="border-color: #417286; background-color: rgba(65, 114, 134, 0.1);">
-                <div class="flex items-center space-x-1 sm:space-x-2 font-semibold text-sm sm:text-base md:text-lg" style="color: #417286;">
-                  <svg class="w-4 h-4 sm:w-5 sm:h-5" fill="currentColor" viewBox="0 0 20 20">
+              <div class="border-2 rounded-lg p-4 mb-6" style="border-color: #417286; background-color: rgba(65, 114, 134, 0.1);">
+                <div class="flex items-center space-x-2 font-semibold text-lg" style="color: #417286;">
+                  <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
                     <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"></path>
                   </svg>
-                  <span class="text-sm sm:text-base">+917204508777</span>
+                  <span>+917204508777</span>
                 </div>
               </div>
               
               <!-- Project specs -->
-              <div class="grid grid-cols-3 gap-1 sm:gap-2 md:gap-4 mb-3 sm:mb-4 md:mb-6 text-xs sm:text-sm">
+              <div class="grid grid-cols-3 gap-4 mb-6 text-sm">
                 <div class="text-center">
                   <div class="text-gray-500 text-xs">Land Parcel</div>
-                  <div class="font-bold text-gray-900 text-xs sm:text-sm md:text-base">8 Acres</div>
+                  <div class="font-bold text-gray-900 text-base">8 Acres</div>
                 </div>
                 <div class="text-center">
                   <div class="text-gray-500 text-xs">Structure</div>
-                  <div class="font-bold text-gray-900 text-xs sm:text-sm md:text-base">2B + G + 4</div>
+                  <div class="font-bold text-gray-900 text-base">2B + G + 4</div>
                 </div>
                 <div class="text-center">
                   <div class="text-gray-500 text-xs">Units</div>
-                  <div class="font-bold text-gray-900 text-xs sm:text-sm md:text-base">441</div>
+                  <div class="font-bold text-gray-900 text-base">441</div>
                 </div>
               </div>
               
               <!-- Benefits list -->
-              <div class="mb-3 sm:mb-4 md:mb-6">
-                <ul class="space-y-1 sm:space-y-1 md:space-y-2 text-xs sm:text-xs md:text-sm text-gray-700">
-                  <li class="flex items-center space-x-1 sm:space-x-2">
-                    <div class="w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full transform rotate-45 flex-shrink-0" style="background-color: #417286;"></div>
-                    <span class="text-xs sm:text-xs">Limited Time Period Offer</span>
+              <div class="mb-6">
+                <ul class="space-y-2 text-sm text-gray-700">
+                  <li class="flex items-center space-x-2">
+                    <div class="w-2 h-2 rounded-full transform rotate-45 flex-shrink-0" style="background-color: #417286;"></div>
+                    <span>Limited Time Period Offer</span>
                   </li>
-                  <li class="flex items-center space-x-1 sm:space-x-2">
-                    <div class="w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full transform rotate-45 flex-shrink-0" style="background-color: #417286;"></div>
-                    <span class="text-xs sm:text-xs">High-Speed Elevators</span>
+                  <li class="flex items-center space-x-2">
+                    <div class="w-2 h-2 rounded-full transform rotate-45 flex-shrink-0" style="background-color: #417286;"></div>
+                    <span>High-Speed Elevators</span>
                   </li>
-                  <li class="flex items-center space-x-1 sm:space-x-2">
-                    <div class="w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full transform rotate-45 flex-shrink-0" style="background-color: #417286;"></div>
-                    <span class="text-xs sm:text-xs">Early Buy Discounts</span>
+                  <li class="flex items-center space-x-2">
+                    <div class="w-2 h-2 rounded-full transform rotate-45 flex-shrink-0" style="background-color: #417286;"></div>
+                    <span>Early Buy Discounts</span>
                   </li>
                 </ul>
               </div>
               
               <!-- Pricing info -->
-              <div class="text-xs sm:text-xs md:text-sm text-gray-700 mb-3 sm:mb-4 md:mb-6">
-                <div class="font-semibold text-xs sm:text-xs">Luxurious 2 & 3 BHK Homes</div>
-                <div class="text-sm sm:text-base md:text-lg font-bold" style="color: #417286;">Starting Price ₹ 90 Lacs* Onwards</div>
+              <div class="text-sm text-gray-700 mb-6">
+                <div class="font-semibold">Luxurious 2 & 3 BHK Homes</div>
+                <div class="text-lg font-bold" style="color: #417286;">Starting Price ₹ 90 Lacs* Onwards</div>
               </div>
               
               <button @click="openModal" class="shimmer-btn w-full">
@@ -764,12 +899,24 @@ export default {
         currentSlide.value = (currentSlide.value + 1) % slides.value.length
       }, 4000) // Change slide every 4 seconds
     }
-    
+
     const stopCarousel = () => {
       if (carouselInterval) {
         clearInterval(carouselInterval)
         carouselInterval = null
       }
+    }
+
+    const nextSlide = () => {
+      stopCarousel()
+      currentSlide.value = (currentSlide.value + 1) % slides.value.length
+      startCarousel()
+    }
+
+    const previousSlide = () => {
+      stopCarousel()
+      currentSlide.value = currentSlide.value === 0 ? slides.value.length - 1 : currentSlide.value - 1
+      startCarousel()
     }
     
     onMounted(() => {
@@ -860,7 +1007,9 @@ export default {
       isSubmitting,
       submitMessage,
       sendEmail,
-      submitModalForm
+      submitModalForm,
+      nextSlide,
+      previousSlide
     }
   }
 }
