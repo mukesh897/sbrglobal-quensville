@@ -68,14 +68,10 @@
             <!-- Carousel Images -->
             <div class="relative w-full h-full">
               <img v-show="currentSlide === 0" 
-                   src="/src/assets/images/contact.png" 
-                   alt="SBR Global Queens Ville" 
-                   class="w-full h-full object-cover transition-opacity duration-1000">
-              <img v-show="currentSlide === 1" 
                    src="/src/assets/images/slider1.png" 
                    alt="SBR Global Queens Ville" 
                    class="w-full h-full object-cover transition-opacity duration-1000">
-              <img v-show="currentSlide === 2" 
+              <img v-show="currentSlide === 1" 
                    src="/src/assets/images/slider2.png" 
                    alt="SBR Global Queens Ville" 
                    class="w-full h-full object-cover transition-opacity duration-1000">
@@ -188,14 +184,10 @@
             <!-- Carousel Images -->
             <div class="relative w-full h-full">
               <img v-show="currentSlide === 0" 
-                   src="/src/assets/images/contact.png" 
-                   alt="SBR Global Queens Ville" 
-                   class="w-full h-full object-cover transition-opacity duration-1000">
-              <img v-show="currentSlide === 1" 
                    src="/src/assets/images/slider1.png" 
                    alt="SBR Global Queens Ville" 
                    class="w-full h-full object-cover transition-opacity duration-1000">
-              <img v-show="currentSlide === 2" 
+              <img v-show="currentSlide === 1" 
                    src="/src/assets/images/slider2.png" 
                    alt="SBR Global Queens Ville" 
                    class="w-full h-full object-cover transition-opacity duration-1000">
@@ -456,25 +448,25 @@
                 <div class="text-sm font-medium text-gray-700">BASKETBALL</div>
               </div>
               <div class="text-center">
-                <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" 
+                <img src="/src/assets/images/Gym.jpg" 
                      alt="Gym" 
                      class="h-32 w-full rounded-lg mb-3 object-cover">
                 <div class="text-sm font-medium text-gray-700">GYM</div>
               </div>
               <div class="text-center">
-                <img src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" 
+                <img src="/src/assets/images/swimming pool.jpg" 
                      alt="Swimming Pool" 
                      class="h-32 w-full rounded-lg mb-3 object-cover">
                 <div class="text-sm font-medium text-gray-700">SWIMMING POOL</div>
               </div>
               <div class="text-center">
-                <img src="https://images.unsplash.com/photo-1606092195730-5d7b9af1efc5?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" 
+                <img src="/src/assets/images/billyards-pool.jpg" 
                      alt="Billiards" 
                      class="h-32 w-full rounded-lg mb-3 object-cover">
                 <div class="text-sm font-medium text-gray-700">BILLIARDS</div>
               </div>
               <div class="text-center">
-                <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" 
+                <img src="/src/assets/images/Jogging-Trackjpg.jpg" 
                      alt="Jogging Track" 
                      class="h-32 w-full rounded-lg mb-3 object-cover">
                 <div class="text-sm font-medium text-gray-700">JOGGING TRACK</div>
@@ -713,103 +705,47 @@
     </div>
 
     <!-- Footer -->
-    <footer class="bg-gray-900 text-white py-12">
+    <footer class="bg-white py-8">
       <div class="max-w-6xl mx-auto px-8">
-        <div class="text-center text-sm text-gray-400 mb-8">
-          <p class="mb-2">We are Authorized Channel Partner with many Developers.</p>
+        <!-- Disclaimer Text -->
+        <div class="text-center text-xs text-gray-600 mb-6 leading-relaxed">
+          <p class="mb-4">
+            <strong>Disclaimer:</strong> The information provided on this website is intended solely for general informational purposes and does not constitute an offer to sell or avail any service. Prices are subject to change without prior notice, and property availability cannot be guaranteed. The images displayed are for illustrative purposes only and may differ from actual property.
+          </p>
+          <p class="mb-4">
+            This is the official website of an authorized marketing partner. We may share information with RERA-registered brokers / companies for necessary processing. Additionally, updates and notifications may be sent to the mobile number or email ID you provide.
+          </p>
+          <p class="mb-4">
+            All rights reserved. The content, design, and information featured on this website are protected under copyright and intellectual property laws. Any unauthorized use, reproduction, or distribution may result in legal consequences. For the most accurate and updated details on services, pricing, availability, or other information, please contact us directly through the official contact details provided on this website.
+          </p>
+          <p class="mb-4">
+            We are authorized channel partners with SBR Group and various other developers.
+          </p>
+          <p class="mb-4">
+            Thank you for visiting our website.
+          </p>
+        </div>
+        
+        <!-- Authorized Channel Partner -->
+        <div class="text-center text-gray-800 font-semibold mb-6">
+          <p>We are Authorized Channel Partner with many Developers.</p>
+        </div>
+        
+        <!-- Disclaimer & Privacy Policy Link -->
+        <div class="text-center mb-6">
+          <a href="/disclaimer" class="text-blue-600 underline hover:text-blue-800 transition-colors cursor-pointer">
+            Disclaimer & Privacy Policy
+          </a>
+        </div>
+        
+        <!-- Copyright -->
+        <div class="text-center text-xs text-gray-500 mb-4">
           <p>All Rights Reserved. © 2025</p>
         </div>
         
-        <!-- Disclaimer & Privacy Policy Section -->
-        <div class="border-t border-gray-700 pt-8">
-          <div class="space-y-8 text-xs text-gray-300">
-            <!-- Disclaimer Section -->
-            <div class="w-full">
-              <h3 class="text-lg font-semibold text-white mb-4">Disclaimer</h3>
-              <div class="space-y-3 leading-relaxed">
-                <p>
-                  This website is intended solely to provide general information about real estate projects across various regions. 
-                  By accessing this website, the viewer acknowledges that the information presented, including brochures and marketing 
-                  materials, is for informational purposes only and should not be relied upon for making any booking or purchase 
-                  decisions in any project.
-                </p>
-                <p>
-                  Nothing contained on this website constitutes advertising, marketing, booking, selling, or an offer or invitation 
-                  to purchase a unit in any project by the company. The company shall not be held responsible for any consequences 
-                  arising from actions taken by viewers based on the content or information available on this website.
-                </p>
-                <p>
-                  Please note that the company has not independently verified the details or compliances of the projects listed herein. 
-                  Additionally, the company has not verified the RERA (Real Estate Regulation Act, 2016) registration status of these 
-                  projects. The company makes no representation regarding such compliances. It is strongly advised that buyers independently 
-                  verify the RERA registration status and other legal compliances of any project before making a purchase decision.
-                </p>
-              </div>
-            </div>
-            
-            <!-- Privacy Policy Section -->
-            <div class="w-full">
-              <h3 class="text-lg font-semibold text-white mb-4">Privacy Policy</h3>
-              <div class="space-y-3 leading-relaxed">
-                <p>
-                  We are committed to safeguarding your personal information. This Privacy Policy outlines how your information is 
-                  collected, used, and protected when you use our website.
-                </p>
-                
-                <div>
-                  <h4 class="font-semibold text-white mb-2">Updates to Privacy Policy</h4>
-                  <p>
-                    This Privacy Policy may be updated or modified from time to time without prior notice. We encourage you to 
-                    periodically review this page to stay informed about changes to the terms and conditions.
-                  </p>
-                </div>
-                
-                <div>
-                  <h4 class="font-semibold text-white mb-2">User Information</h4>
-                  <p>
-                    By using our website, you agree to the terms outlined in this Privacy Policy and consent to the collection and 
-                    use of information you may provide. While some sections of the website can be accessed without sharing personal 
-                    details, certain features may require you to provide personal information such as your name, email address, 
-                    phone number, etc.
-                  </p>
-                  <p class="mt-2">
-                    The information collected is used to:
-                  </p>
-                  <ul class="list-disc list-inside ml-4 mt-1 space-y-1">
-                    <li>Provide relevant products and services,</li>
-                    <li>Acknowledge receipt of your communication, and</li>
-                    <li>Share updates or information that may be of interest to you.</li>
-                  </ul>
-                  <p class="mt-2">
-                    You may request removal from our mailing list at any time. We do not share, sell, or disclose your personal 
-                    information to third parties without your consent.
-                  </p>
-                </div>
-                
-                <div>
-                  <h4 class="font-semibold text-white mb-2">Security</h4>
-                  <p>
-                    To protect sensitive data, all transmissions between client and server are encrypted using advanced 
-                    industry-standard protocols. Access to personal information is strictly restricted to authorized employees, 
-                    who are bound by confidentiality obligations.
-                  </p>
-                </div>
-                
-                <div>
-                  <h4 class="font-semibold text-white mb-2">Use of Cookies</h4>
-                  <p>
-                    We may use cookies to enhance website security, maintain session continuity, and improve user experience. 
-                    If you choose to disable cookies, certain features or services of the website may not function properly.
-                  </p>
-                </div>
-                
-                <p>
-                  For any queries or suggestions regarding this Privacy Policy or your interaction with our website, please 
-                  contact us through the details provided on this site.
-                </p>
-              </div>
-            </div>
-          </div>
+        <!-- Digital Media -->
+        <div class="text-center text-xs text-gray-600">
+          <p>Digital Media Planned - <a href="#" class="text-blue-600 underline">GrowtLoopMedia</a></p>
         </div>
       </div>
     </footer>
@@ -939,7 +875,6 @@ export default {
     const showModal = ref(false)
     const currentSlide = ref(0)
     const slides = ref([
-      { src: '/src/assets/images/contact.png' },
       { src: '/src/assets/images/slider1.png' },
       { src: '/src/assets/images/slider2.png' }
     ])

@@ -1,6 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import App from '../App.vue'
 import ThankYou from '../ThankYou.vue'
+import Disclaimer from '../Disclaimer.vue'
 
 const routes = [
   {
@@ -12,6 +13,11 @@ const routes = [
     path: '/thank-you',
     name: 'ThankYou',
     component: ThankYou
+  },
+  {
+    path: '/disclaimer',
+    name: 'Disclaimer',
+    component: Disclaimer
   }
 ]
 
