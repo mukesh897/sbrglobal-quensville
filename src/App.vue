@@ -743,10 +743,6 @@
           <p>All Rights Reserved. © 2025</p>
         </div>
         
-        <!-- Digital Media -->
-        <div class="text-center text-xs text-gray-600">
-          <p>Digital Media Planned - <a href="#" class="text-blue-600 underline">GrowtLoopMedia</a></p>
-        </div>
       </div>
     </footer>
 
