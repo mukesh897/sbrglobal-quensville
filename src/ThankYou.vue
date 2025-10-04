@@ -21,7 +21,30 @@
 </template>
 
 <script>
+import { onMounted } from 'vue'
+
 export default {
-  name: 'ThankYou'
+  name: 'ThankYou',
+  setup() {
+    onMounted(() => {
+      // Track thank you page visit
+      window.dataLayer = window.dataLayer || [];
+      
+      // Push thank you page event
+      window.dataLayer.push({
+        'event': 'thank_you_page_view',
+        'page_title': 'Thank You - SBR Global Queens Ville',
+        'page_location': window.location.href,
+        'conversion_type': 'form_submission_success',
+        'project_name': 'SBR Global Queens Ville',
+        'user_action': 'completed_enquiry'
+      });
+      
+      console.log('Thank you page event tracked:', {
+        event: 'thank_you_page_view',
+        timestamp: new Date().toISOString()
+      });
+    });
+  }
 }
 </script>

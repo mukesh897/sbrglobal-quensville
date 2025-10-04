@@ -961,6 +961,16 @@ export default {
           'CAXeNuLKdK4qtQmdn'
         )
         
+        // Track form submission success
+        window.dataLayer = window.dataLayer || [];
+        window.dataLayer.push({
+          'event': 'form_submission',
+          'form_type': formType,
+          'project_name': 'SBR Global Queens Ville',
+          'user_action': 'enquiry_submitted',
+          'conversion_type': 'lead_generation'
+        });
+        
         submitMessage.value = 'Thank you! We will contact you soon.'
         formData.value = { name: '', email: '', phone: '' }
         
@@ -994,6 +1004,16 @@ export default {
           templateParams,
           'CAXeNuLKdK4qtQmdn'
         )
+        
+        // Track modal form submission success
+        window.dataLayer = window.dataLayer || [];
+        window.dataLayer.push({
+          'event': 'form_submission',
+          'form_type': 'modal',
+          'project_name': 'SBR Global Queens Ville',
+          'user_action': 'enquiry_submitted',
+          'conversion_type': 'lead_generation'
+        });
         
         // Close modal and show thank you message
         closeModal()
