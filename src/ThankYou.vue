@@ -9,7 +9,7 @@
       <h1 class="text-2xl font-bold text-gray-900 mb-4">Thank You!</h1>
       <p class="text-gray-600 mb-6">Thank you for your interest, our team will get in touch with you soon!</p>
       <div class="space-y-4">
-        <a href="/" class="block bg-teal-500 hover:bg-teal-600 text-white px-6 py-3 rounded-lg font-semibold transition-colors">
+        <a href="/" class="block text-white px-6 py-3 rounded-lg font-semibold transition-colors" style="background-color: #417286;">
           Back to Home
         </a>
         <div class="text-sm text-gray-500">

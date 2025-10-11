@@ -559,15 +559,18 @@
                 <form @submit.prevent="sendEmail('site-visit')" class="space-y-6">
                   <div>
                     <label class="block text-sm font-medium text-gray-700 mb-2">Name</label>
-                    <input v-model="formData.name" type="text" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#417286] focus:border-transparent">
+                    <input v-model="formData.name" type="text" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#417286] focus:border-transparent" :class="{ 'border-red-500': formErrors.name }" @input="formData.name = formData.name.replace(/[^a-zA-Z\s]/g, '')">
+                    <div v-if="formErrors.name" class="text-red-500 text-sm mt-1">{{ formErrors.name }}</div>
                   </div>
                   <div>
                     <label class="block text-sm font-medium text-gray-700 mb-2">India (+91) - Mobile No.</label>
-                    <input v-model="formData.phone" type="tel" required pattern="[0-9]*" inputmode="numeric" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#417286] focus:border-transparent" @input="formData.phone = formData.phone.replace(/[^0-9]/g, '')">
+                    <input v-model="formData.phone" type="tel" required pattern="[0-9]*" inputmode="numeric" placeholder="10 digits" maxlength="10" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#417286] focus:border-transparent" @input="formData.phone = formData.phone.replace(/[^0-9]/g, '')" :class="{ 'border-red-500': formErrors.phone }">
+                    <div v-if="formErrors.phone" class="text-red-500 text-sm mt-1">{{ formErrors.phone }}</div>
                   </div>
                   <div>
                     <label class="block text-sm font-medium text-gray-700 mb-2">E-Mail Address</label>
-                    <input v-model="formData.email" type="email" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#417286] focus:border-transparent">
+                    <input v-model="formData.email" type="email" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#417286] focus:border-transparent" :class="{ 'border-red-500': formErrors.email }">
+                    <div v-if="formErrors.email" class="text-red-500 text-sm mt-1">{{ formErrors.email }}</div>
                   </div>
                   <button type="submit" :disabled="isSubmitting" class="shimmer-btn w-full disabled:bg-gray-400" :class="{ 'shimmer-btn': !isSubmitting }">
                     {{ isSubmitting ? 'Submitting...' : 'Pre-Register Now' }}
@@ -594,7 +597,8 @@
           <form @submit.prevent="sendEmail('sidebar')" class="space-y-4">
             <div>
               <label class="block text-sm font-medium text-gray-700 mb-2">Name</label>
-              <input v-model="formData.name" type="text" required class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#417286] focus:border-transparent">
+              <input v-model="formData.name" type="text" required class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#417286] focus:border-transparent" :class="{ 'border-red-500': formErrors.name }" @input="formData.name = formData.name.replace(/[^a-zA-Z\s]/g, '')">
+              <div v-if="formErrors.name" class="text-red-500 text-sm mt-1">{{ formErrors.name }}</div>
             </div>
             <div>
               <label class="block text-sm font-medium text-gray-700 mb-2">India (+91)</label>
@@ -602,12 +606,14 @@
                 <select class="px-3 py-2 border border-gray-300 rounded-l-lg focus:ring-2 focus:ring-[#417286] focus:border-transparent">
                   <option>+91</option>
                 </select>
-                <input v-model="formData.phone" type="tel" placeholder="Mobile No." required pattern="[0-9]*" inputmode="numeric" class="flex-1 px-3 py-2 border border-gray-300 rounded-r-lg focus:ring-2 focus:ring-[#417286] focus:border-transparent" @input="formData.phone = formData.phone.replace(/[^0-9]/g, '')">
+                <input v-model="formData.phone" type="tel" placeholder="10 digits" required pattern="[0-9]*" inputmode="numeric" maxlength="10" class="flex-1 px-3 py-2 border border-gray-300 rounded-r-lg focus:ring-2 focus:ring-[#417286] focus:border-transparent" @input="formData.phone = formData.phone.replace(/[^0-9]/g, '')" :class="{ 'border-red-500': formErrors.phone }">
               </div>
+              <div v-if="formErrors.phone" class="text-red-500 text-sm mt-1">{{ formErrors.phone }}</div>
             </div>
             <div>
               <label class="block text-sm font-medium text-gray-700 mb-2">E-Mail Address</label>
-              <input v-model="formData.email" type="email" required class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#417286] focus:border-transparent">
+              <input v-model="formData.email" type="email" required class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#417286] focus:border-transparent" :class="{ 'border-red-500': formErrors.email }">
+              <div v-if="formErrors.email" class="text-red-500 text-sm mt-1">{{ formErrors.email }}</div>
             </div>
             <button type="submit" :disabled="isSubmitting" class="shimmer-btn w-full disabled:bg-gray-400">
               {{ isSubmitting ? 'Submitting...' : 'Pre-Register Now' }}
@@ -660,15 +666,18 @@
           <form @submit.prevent="sendEmail('mobile')" class="space-y-4">
             <div>
               <label class="block text-sm font-medium text-gray-700 mb-2">Name</label>
-              <input v-model="formData.name" type="text" required class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#417286] focus:border-transparent">
+              <input v-model="formData.name" type="text" required class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#417286] focus:border-transparent" :class="{ 'border-red-500': formErrors.name }" @input="formData.name = formData.name.replace(/[^a-zA-Z\s]/g, '')">
+              <div v-if="formErrors.name" class="text-red-500 text-sm mt-1">{{ formErrors.name }}</div>
             </div>
             <div>
               <label class="block text-sm font-medium text-gray-700 mb-2">India (+91) - Mobile No.</label>
-              <input v-model="formData.phone" type="tel" required pattern="[0-9]*" inputmode="numeric" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#417286] focus:border-transparent" @input="formData.phone = formData.phone.replace(/[^0-9]/g, '')">
+              <input v-model="formData.phone" type="tel" required pattern="[0-9]*" inputmode="numeric" placeholder="10 digits" maxlength="10" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#417286] focus:border-transparent" @input="formData.phone = formData.phone.replace(/[^0-9]/g, '')" :class="{ 'border-red-500': formErrors.phone }">
+              <div v-if="formErrors.phone" class="text-red-500 text-sm mt-1">{{ formErrors.phone }}</div>
             </div>
             <div>
               <label class="block text-sm font-medium text-gray-700 mb-2">E-Mail Address</label>
-              <input v-model="formData.email" type="email" required class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#417286] focus:border-transparent">
+              <input v-model="formData.email" type="email" required class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#417286] focus:border-transparent" :class="{ 'border-red-500': formErrors.email }">
+              <div v-if="formErrors.email" class="text-red-500 text-sm mt-1">{{ formErrors.email }}</div>
             </div>
             <button type="submit" :disabled="isSubmitting" class="shimmer-btn w-full disabled:bg-gray-400">
               {{ isSubmitting ? 'Submitting...' : 'Pre-Register Now' }}
@@ -820,7 +829,8 @@
             <form @submit.prevent="submitModalForm" class="space-y-4 mt-6">
               <div>
                 <label class="block text-sm font-medium text-gray-700 mb-2">Name</label>
-                <input v-model="modalFormData.name" type="text" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#417286] focus:border-transparent">
+                <input v-model="modalFormData.name" type="text" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#417286] focus:border-transparent" :class="{ 'border-red-500': modalFormErrors.name }" @input="modalFormData.name = modalFormData.name.replace(/[^a-zA-Z\s]/g, '')">
+                <div v-if="modalFormErrors.name" class="text-red-500 text-sm mt-1">{{ modalFormErrors.name }}</div>
               </div>
               <div>
                 <label class="block text-sm font-medium text-gray-700 mb-2">India (+91)</label>
@@ -828,12 +838,14 @@
                   <select class="px-4 py-3 border border-gray-300 rounded-l-lg focus:ring-2 focus:ring-[#417286] focus:border-transparent">
                     <option>+91</option>
                   </select>
-                  <input v-model="modalFormData.phone" type="tel" placeholder="Mobile No." required pattern="[0-9]*" inputmode="numeric" class="flex-1 px-4 py-3 border border-gray-300 rounded-r-lg focus:ring-2 focus:ring-[#417286] focus:border-transparent" @input="modalFormData.phone = modalFormData.phone.replace(/[^0-9]/g, '')">
+                  <input v-model="modalFormData.phone" type="tel" placeholder="10 digits" required pattern="[0-9]*" inputmode="numeric" maxlength="10" class="flex-1 px-4 py-3 border border-gray-300 rounded-r-lg focus:ring-2 focus:ring-[#417286] focus:border-transparent" @input="modalFormData.phone = modalFormData.phone.replace(/[^0-9]/g, '')" :class="{ 'border-red-500': modalFormErrors.phone }">
                 </div>
+                <div v-if="modalFormErrors.phone" class="text-red-500 text-sm mt-1">{{ modalFormErrors.phone }}</div>
               </div>
               <div>
                 <label class="block text-sm font-medium text-gray-700 mb-2">E-Mail Address</label>
-                <input v-model="modalFormData.email" type="email" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#417286] focus:border-transparent">
+                <input v-model="modalFormData.email" type="email" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#417286] focus:border-transparent" :class="{ 'border-red-500': modalFormErrors.email }">
+                <div v-if="modalFormErrors.email" class="text-red-500 text-sm mt-1">{{ modalFormErrors.email }}</div>
               </div>
               <button type="submit" :disabled="isSubmitting" class="shimmer-btn w-full disabled:bg-gray-400" :class="{ 'shimmer-btn': !isSubmitting }">
                 {{ isSubmitting ? 'Submitting...' : 'Pre-Register Now' }}
@@ -885,8 +897,103 @@ export default {
       email: '',
       phone: ''
     })
+    const formErrors = ref({
+      name: '',
+      email: '',
+      phone: ''
+    })
+    const modalFormErrors = ref({
+      name: '',
+      email: '',
+      phone: ''
+    })
     const isSubmitting = ref(false)
     const submitMessage = ref('')
+    const utmParams = ref({})
+    const trackingSource = ref('site visit')
+    
+    // Parse UTM parameters from URL
+    const parseUTMParameters = () => {
+      const urlParams = new URLSearchParams(window.location.search)
+      const params = {}
+      
+      // Check if there are any UTM parameters
+      const hasUTM = urlParams.has('utm_source') || urlParams.has('utm_campaign')
+      
+      if (hasUTM) {
+        params.utm_source = urlParams.get('utm_source') || ''
+        params.utm_medium = urlParams.get('utm_medium') || ''
+        params.utm_campaign = urlParams.get('utm_campaign') || ''
+        params.utm_term = urlParams.get('utm_term') || ''
+        params.utm_adgroupid = urlParams.get('utm_adgroupid') || ''
+        params.utm_matchtype = urlParams.get('utm_matchtype') || ''
+        params.utm_device = urlParams.get('utm_device') || ''
+        params.gid = urlParams.get('gid') || ''
+        
+        utmParams.value = params
+        
+        // Set tracking source to Google Ads with campaign name
+        if (params.utm_source === 'google' && params.utm_medium === 'cpc') {
+          trackingSource.value = `Google Ads - ${params.utm_campaign || 'Campaign'}`
+        } else {
+          trackingSource.value = 'paid traffic'
+        }
+      } else {
+        trackingSource.value = 'site visit'
+      }
+      
+      console.log('UTM Parameters:', params)
+      console.log('Tracking Source:', trackingSource.value)
+    }
+    
+    // Form validation functions
+    const validateName = (name) => {
+      if (!name || name.trim().length === 0) {
+        return 'Name is required'
+      }
+      if (name.trim().length < 2) {
+        return 'Name must be at least 2 characters'
+      }
+      // Check if name contains only letters and spaces
+      const nameRegex = /^[a-zA-Z\s]+$/
+      if (!nameRegex.test(name.trim())) {
+        return 'Name can only contain letters and spaces'
+      }
+      return ''
+    }
+    
+    const validatePhone = (phone) => {
+      if (!phone || phone.trim().length === 0) {
+        return 'Mobile number is required'
+      }
+      const cleanPhone = phone.replace(/\D/g, '')
+      if (cleanPhone.length !== 10) {
+        return 'Mobile number must be exactly 10 digits'
+      }
+      if (!/^[6-9]/.test(cleanPhone)) {
+        return 'Mobile number must start with 6, 7, 8, or 9'
+      }
+      return ''
+    }
+    
+    const validateEmail = (email) => {
+      if (!email || email.trim().length === 0) {
+        return 'Email is required'
+      }
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+      if (!emailRegex.test(email)) {
+        return 'Please enter a valid email address'
+      }
+      return ''
+    }
+    
+    const validateForm = (data, errors) => {
+      errors.name = validateName(data.name)
+      errors.phone = validatePhone(data.phone)
+      errors.email = validateEmail(data.email)
+      
+      return !errors.name && !errors.phone && !errors.email
+    }
     
     const toggleMobileMenu = () => {
       mobileMenuOpen.value = !mobileMenuOpen.value
@@ -903,7 +1010,7 @@ export default {
     
     const showThankYouPage = () => {
       // Redirect to thank you page
-      window.location.href = '/thank-you.html'
+      window.location.href = '/thank-you'
     }
     
     // Auto carousel functionality
@@ -936,6 +1043,7 @@ export default {
     
     onMounted(() => {
       startCarousel()
+      parseUTMParameters()
     })
     
     onUnmounted(() => {
@@ -943,15 +1051,45 @@ export default {
     })
     
     const sendEmail = async (formType = 'sidebar') => {
+      console.log('🚀 Form submission started for:', formType)
+      
+      // Clear previous errors
+      formErrors.value = { name: '', email: '', phone: '' }
+      
+      // Validate form
+      const isValid = validateForm(formData.value, formErrors.value)
+      console.log('📋 Form validation result:', isValid, formErrors.value)
+      
+      if (!isValid) {
+        console.log('❌ Form validation failed, not submitting')
+        return
+      }
+      
       isSubmitting.value = true
       submitMessage.value = ''
       
       try {
+        // Build comprehensive tracking info
+        let trackingInfo = trackingSource.value
+        if (Object.keys(utmParams.value).length > 0) {
+          const details = []
+          if (utmParams.value.utm_term) details.push(`Keyword: ${utmParams.value.utm_term}`)
+          if (utmParams.value.utm_device) details.push(`Device: ${utmParams.value.utm_device}`)
+          if (utmParams.value.utm_matchtype) details.push(`Match: ${utmParams.value.utm_matchtype}`)
+          if (utmParams.value.gid) details.push(`GCLID: ${utmParams.value.gid}`)
+          
+          if (details.length > 0) {
+            trackingInfo += ` | ${details.join(' | ')}`
+          }
+        }
+        
         const templateParams = {
           name: formData.value.name,
           email: formData.value.email,
           phone: formData.value.phone,
-          form_type: formType
+          tracking: trackingInfo,
+          role: formType,
+          url: 'SBR Queensville'
         }
         
         await emailjs.send(
@@ -961,15 +1099,25 @@ export default {
           'CAXeNuLKdK4qtQmdn'
         )
         
+        // Send to Cratio CRM
+        console.log('🚀 Sending to Cratio CRM...', { formType, templateParams })
+        console.log('✅ FORM TYPE CONFIRMED:', formType.toUpperCase())
+        await sendToCratioCRM(templateParams, formType)
+        
         // Track form submission success
         window.dataLayer = window.dataLayer || [];
-        window.dataLayer.push({
+        const formEvent = {
           'event': 'form_submission',
           'form_type': formType,
           'project_name': 'SBR Global Queens Ville',
           'user_action': 'enquiry_submitted',
-          'conversion_type': 'lead_generation'
-        });
+          'conversion_type': 'lead_generation',
+          'timestamp': new Date().toISOString()
+        };
+        
+        window.dataLayer.push(formEvent);
+        console.log('✅ Form submission event tracked:', formEvent);
+        console.log('📊 Current dataLayer length:', window.dataLayer.length);
         
         submitMessage.value = 'Thank you! We will contact you soon.'
         formData.value = { name: '', email: '', phone: '' }
@@ -988,14 +1136,44 @@ export default {
     }
     
     const submitModalForm = async () => {
+      console.log('🚀 Modal form submission started')
+      
+      // Clear previous errors
+      modalFormErrors.value = { name: '', email: '', phone: '' }
+      
+      // Validate form
+      const isValid = validateForm(modalFormData.value, modalFormErrors.value)
+      console.log('📋 Modal form validation result:', isValid, modalFormErrors.value)
+      
+      if (!isValid) {
+        console.log('❌ Modal form validation failed, not submitting')
+        return
+      }
+      
       isSubmitting.value = true
       
       try {
+        // Build comprehensive tracking info
+        let trackingInfo = trackingSource.value
+        if (Object.keys(utmParams.value).length > 0) {
+          const details = []
+          if (utmParams.value.utm_term) details.push(`Keyword: ${utmParams.value.utm_term}`)
+          if (utmParams.value.utm_device) details.push(`Device: ${utmParams.value.utm_device}`)
+          if (utmParams.value.utm_matchtype) details.push(`Match: ${utmParams.value.utm_matchtype}`)
+          if (utmParams.value.gid) details.push(`GCLID: ${utmParams.value.gid}`)
+          
+          if (details.length > 0) {
+            trackingInfo += ` | ${details.join(' | ')}`
+          }
+        }
+        
         const templateParams = {
-          from_name: modalFormData.value.name,
-          from_email: modalFormData.value.email,
+          name: modalFormData.value.name,
+          email: modalFormData.value.email,
           phone: modalFormData.value.phone,
-          form_type: 'modal'
+          tracking: trackingInfo,
+          role: 'modal',
+          url: 'SBR Queensville'
         }
         
         await emailjs.send(
@@ -1005,15 +1183,25 @@ export default {
           'CAXeNuLKdK4qtQmdn'
         )
         
+        // Send to Cratio CRM
+        console.log('🚀 Sending to Cratio CRM...', { formType: 'modal', templateParams })
+        console.log('✅ FORM TYPE CONFIRMED: MODAL')
+        await sendToCratioCRM(templateParams, 'modal')
+        
         // Track modal form submission success
         window.dataLayer = window.dataLayer || [];
-        window.dataLayer.push({
+        const modalFormEvent = {
           'event': 'form_submission',
           'form_type': 'modal',
           'project_name': 'SBR Global Queens Ville',
           'user_action': 'enquiry_submitted',
-          'conversion_type': 'lead_generation'
-        });
+          'conversion_type': 'lead_generation',
+          'timestamp': new Date().toISOString()
+        };
+        
+        window.dataLayer.push(modalFormEvent);
+        console.log('✅ Modal form submission event tracked:', modalFormEvent);
+        console.log('📊 Current dataLayer length:', window.dataLayer.length);
         
         // Close modal and show thank you message
         closeModal()
@@ -1029,6 +1217,69 @@ export default {
       }
     }
     
+    // Send data to Cratio CRM
+    const sendToCratioCRM = async (formData, formType) => {
+      try {
+        console.log('📊 Preparing Cratio CRM payload...', { formData, formType })
+        
+        // Determine source based on tracking info
+        let source = 'site visit'
+        if (formData.tracking.includes('Google Ads')) {
+          source = 'Google ads'
+        }
+        
+        const cratioPayload = {
+          leadid: `SBR_${Date.now()}_${Math.random().toString(36).substr(2, 9)}`,
+          contact: formData.name,
+          mobile: `+91-${formData.phone}`,
+          email: formData.email,
+          date: new Date().toISOString().split('T')[0],
+          time: new Date().toTimeString().split(' ')[0],
+          category: formData.tracking,
+          source: source,
+          lead_owner: 'Navya',
+          lead_stage: 'New',
+          visiting_preference: formType === 'modal' ? 'Modal Form' : formType === 'sidebar' ? 'Sidebar Form' : formType === 'mobile' ? 'Mobile Form' : 'Site Visit Form',
+          area: 'Kumbalgodu, Mysore Road',
+          city: 'Bangalore',
+          company: 'SBR Global Queens Ville'
+        }
+        
+        console.log('📤 Sending payload to Cratio CRM:', cratioPayload)
+        
+        const response = await fetch('https://apps.cratiocrm.com/Customize/Webhooks/webhook.php?id=86428', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(cratioPayload)
+        })
+        
+        console.log('📡 Cratio CRM Response:', { 
+          status: response.status, 
+          statusText: response.statusText,
+          ok: response.ok 
+        })
+        
+        if (response.ok) {
+          const responseData = await response.text()
+          console.log('✅ Lead sent to Cratio CRM successfully!', { 
+            payload: cratioPayload,
+            response: responseData 
+          })
+        } else {
+          const errorData = await response.text()
+          console.error('❌ Failed to send lead to Cratio CRM:', { 
+            status: response.status,
+            statusText: response.statusText,
+            error: errorData 
+          })
+        }
+      } catch (error) {
+        console.error('❌ Error sending to Cratio CRM:', error)
+      }
+    }
+    
     return {
       mobileMenuOpen,
       showModal,
@@ -1041,6 +1292,8 @@ export default {
       modalFormData,
       isSubmitting,
       submitMessage,
+      formErrors,
+      modalFormErrors,
       sendEmail,
       submitModalForm,
       nextSlide,
