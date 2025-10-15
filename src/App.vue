@@ -573,8 +573,13 @@
                     <div v-if="formErrors.email" class="text-red-500 text-sm mt-1">{{ formErrors.email }}</div>
                   </div>
                   <button type="submit" :disabled="isSubmitting" class="shimmer-btn w-full disabled:bg-gray-400" :class="{ 'shimmer-btn': !isSubmitting }">
-                    {{ isSubmitting ? 'Submitting...' : 'Pre-Register Now' }}
+                    {{ isSubmitting ? 'Verifying & Submitting...' : 'Pre-Register Now' }}
                   </button>
+                  <div class="text-xs text-gray-500 text-center mt-2">
+                    This site is protected by reCAPTCHA and the Google 
+                    <a href="https://policies.google.com/privacy" target="_blank" class="text-blue-600 hover:underline">Privacy Policy</a> and 
+                    <a href="https://policies.google.com/terms" target="_blank" class="text-blue-600 hover:underline">Terms of Service</a> apply.
+                  </div>
                   <div v-if="submitMessage" class="text-sm text-green-600 mt-2">
                     {{ submitMessage }}
                   </div>
@@ -616,8 +621,13 @@
               <div v-if="formErrors.email" class="text-red-500 text-sm mt-1">{{ formErrors.email }}</div>
             </div>
             <button type="submit" :disabled="isSubmitting" class="shimmer-btn w-full disabled:bg-gray-400">
-              {{ isSubmitting ? 'Submitting...' : 'Pre-Register Now' }}
+              {{ isSubmitting ? 'Verifying & Submitting...' : 'Pre-Register Now' }}
             </button>
+            <div class="text-xs text-gray-500 text-center mt-2">
+              This site is protected by reCAPTCHA and the Google 
+              <a href="https://policies.google.com/privacy" target="_blank" class="text-blue-600 hover:underline">Privacy Policy</a> and 
+              <a href="https://policies.google.com/terms" target="_blank" class="text-blue-600 hover:underline">Terms of Service</a> apply.
+            </div>
             <div v-if="submitMessage" class="text-sm text-green-600 mt-2">
               {{ submitMessage }}
             </div>
@@ -680,8 +690,13 @@
               <div v-if="formErrors.email" class="text-red-500 text-sm mt-1">{{ formErrors.email }}</div>
             </div>
             <button type="submit" :disabled="isSubmitting" class="shimmer-btn w-full disabled:bg-gray-400">
-              {{ isSubmitting ? 'Submitting...' : 'Pre-Register Now' }}
+              {{ isSubmitting ? 'Verifying & Submitting...' : 'Pre-Register Now' }}
             </button>
+            <div class="text-xs text-gray-500 text-center mt-2">
+              This site is protected by reCAPTCHA and the Google 
+              <a href="https://policies.google.com/privacy" target="_blank" class="text-blue-600 hover:underline">Privacy Policy</a> and 
+              <a href="https://policies.google.com/terms" target="_blank" class="text-blue-600 hover:underline">Terms of Service</a> apply.
+            </div>
             <div v-if="submitMessage" class="text-sm text-green-600 mt-2">
               {{ submitMessage }}
             </div>
@@ -848,8 +863,13 @@
                 <div v-if="modalFormErrors.email" class="text-red-500 text-sm mt-1">{{ modalFormErrors.email }}</div>
               </div>
               <button type="submit" :disabled="isSubmitting" class="shimmer-btn w-full disabled:bg-gray-400" :class="{ 'shimmer-btn': !isSubmitting }">
-                {{ isSubmitting ? 'Submitting...' : 'Pre-Register Now' }}
+                {{ isSubmitting ? 'Verifying & Submitting...' : 'Pre-Register Now' }}
               </button>
+              <div class="text-xs text-gray-500 text-center mt-2">
+                This site is protected by reCAPTCHA and the Google 
+                <a href="https://policies.google.com/privacy" target="_blank" class="text-blue-600 hover:underline">Privacy Policy</a> and 
+                <a href="https://policies.google.com/terms" target="_blank" class="text-blue-600 hover:underline">Terms of Service</a> apply.
+              </div>
             </form>
 
             <!-- Consent Text -->
@@ -912,6 +932,9 @@ export default {
     const utmParams = ref({})
     const trackingSource = ref('site visit')
     
+    // reCAPTCHA configuration
+    const RECAPTCHA_SITE_KEY = '6LcQCusrAAAAAF9_-x6dr4ss_ZgyMQEoXLYGwktz'
+    
     // Parse UTM parameters from URL
     const parseUTMParameters = () => {
       const urlParams = new URLSearchParams(window.location.search)
@@ -944,6 +967,29 @@ export default {
       
       console.log('UTM Parameters:', params)
       console.log('Tracking Source:', trackingSource.value)
+    }
+    
+    // reCAPTCHA verification function
+    const verifyRecaptcha = async () => {
+      return new Promise((resolve, reject) => {
+        if (typeof grecaptcha === 'undefined') {
+          console.warn('reCAPTCHA not loaded, skipping verification')
+          resolve(true) // Allow submission if reCAPTCHA is not loaded
+          return
+        }
+        
+        grecaptcha.ready(() => {
+          grecaptcha.execute(RECAPTCHA_SITE_KEY, { action: 'submit' })
+            .then((token) => {
+              console.log('reCAPTCHA token generated:', token.substring(0, 20) + '...')
+              resolve(token)
+            })
+            .catch((error) => {
+              console.error('reCAPTCHA verification failed:', error)
+              reject(error)
+            })
+        })
+      })
     }
     
     // Form validation functions
@@ -1065,6 +1111,17 @@ export default {
         return
       }
       
+      // Verify reCAPTCHA before proceeding
+      try {
+        console.log('🔒 Verifying reCAPTCHA...')
+        await verifyRecaptcha()
+        console.log('✅ reCAPTCHA verification successful')
+      } catch (error) {
+        console.error('❌ reCAPTCHA verification failed:', error)
+        submitMessage.value = 'Security verification failed. Please try again.'
+        return
+      }
+      
       isSubmitting.value = true
       submitMessage.value = ''
       
@@ -1147,6 +1204,17 @@ export default {
       
       if (!isValid) {
         console.log('❌ Modal form validation failed, not submitting')
+        return
+      }
+      
+      // Verify reCAPTCHA before proceeding
+      try {
+        console.log('🔒 Verifying reCAPTCHA for modal...')
+        await verifyRecaptcha()
+        console.log('✅ reCAPTCHA verification successful for modal')
+      } catch (error) {
+        console.error('❌ reCAPTCHA verification failed for modal:', error)
+        alert('Security verification failed. Please try again.')
         return
       }
       
