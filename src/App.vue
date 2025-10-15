@@ -775,7 +775,7 @@
       <div class="bg-white rounded-xl max-w-4xl w-full max-h-[90vh] overflow-y-auto">
         <div class="flex flex-col lg:flex-row">
           <!-- Left Section - We Promise -->
-          <div class="p-8 lg:w-1/2" style="background: linear-gradient(to bottom right, rgba(59, 130, 246, 0.1), rgba(65, 114, 134, 0.1));">
+          <div class="hidden lg:block p-8 lg:w-1/3" style="background: linear-gradient(to bottom right, rgba(59, 130, 246, 0.1), rgba(65, 114, 134, 0.1));">
             <h2 class="text-3xl font-bold text-gray-800 mb-8">We Promise</h2>
             <div class="space-y-6">
               <div class="flex items-center space-x-4">
@@ -817,7 +817,7 @@
           </div>
 
           <!-- Right Section - Registration Form -->
-          <div class="p-8 lg:w-1/2 relative">
+          <div class="p-8 w-full lg:w-2/3 relative">
             <!-- Close Button -->
             <button @click="closeModal" class="absolute top-4 right-4 w-8 h-8 bg-gray-200 rounded-full flex items-center justify-center hover:bg-gray-300 transition-colors">
               <svg class="w-4 h-4 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -902,6 +902,7 @@ export default {
   setup() {
     const mobileMenuOpen = ref(false)
     const showModal = ref(false)
+    const hasShownScrollModal = ref(false)
     const currentSlide = ref(0)
     const slides = ref([
       { src: '/src/assets/images/slider1.png' },
@@ -1054,6 +1055,26 @@ export default {
       modalFormData.value = { name: '', email: '', phone: '' }
     }
     
+    // Scroll tracking for popup
+    const handleScroll = () => {
+      if (hasShownScrollModal.value) return // Don't show again if already shown
+      
+      const scrollTop = window.pageYOffset || document.documentElement.scrollTop
+      const windowHeight = window.innerHeight
+      const documentHeight = document.documentElement.scrollHeight
+      
+      // Calculate scroll percentage
+      const scrollPercentage = (scrollTop / (documentHeight - windowHeight)) * 100
+      
+      // Show modal at 40% scroll
+      if (scrollPercentage >= 40) {
+        hasShownScrollModal.value = true
+        showModal.value = true
+        // Remove scroll listener after showing modal
+        window.removeEventListener('scroll', handleScroll)
+      }
+    }
+    
     const showThankYouPage = () => {
       // Redirect to thank you page
       window.location.href = '/thank-you'
@@ -1090,10 +1111,14 @@ export default {
     onMounted(() => {
       startCarousel()
       parseUTMParameters()
+      // Add scroll listener for popup
+      window.addEventListener('scroll', handleScroll)
     })
     
     onUnmounted(() => {
       stopCarousel()
+      // Remove scroll listener
+      window.removeEventListener('scroll', handleScroll)
     })
     
     const sendEmail = async (formType = 'sidebar') => {
